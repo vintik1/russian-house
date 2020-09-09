@@ -1,0 +1,97 @@
+@font-face {
+	font-family: RoslynGothic;
+	src: url("../fonts/RoslynGothic.ttf") format("ttf");
+}
+.roslyn-font {
+	font-family: RoslynGothic;
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+	outline-color: white;
+ }
+.list-group > li {
+	font-size: 14px;
+}
+.cursor-pointer{
+	cursor: default;
+}
+
+.nav-scroller {
+	position: relative;
+	z-index: 2;
+	height: 2.75rem;
+	overflow-y: hidden;
+	flex-basis: 100%;
+}
+.nav-scroller .nav {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	padding-bottom: 1rem;
+	margin-top: -1px;
+	overflow-x: auto;
+	text-align: center;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+}
+.nav-underline .nav-link {
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	font-size: 1rem;
+	color: #6c757d;
+}
+.nav-underline .nav-link:hover {
+	color: #bebdbf;
+}
+// .nav-underline .active {
+// 	font-weight: 400;
+// 	color: #343a40;
+// }
+
+
+.custom-link {
+	color: #6c757d;
+}
+.custom-link:hover {
+	color: #bebdbf;
+	text-decoration: none;
+}
+
+.card-link {
+	color: #756b49;
+	text-decoration: none;
+}
+.card-link:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+
+.lang-toggle {
+	text-transform: uppercase;
+	font-size: 1rem !important;
+	margin-left: auto;
+	margin-right: 0;
+}
+.lang-toggle:hover {
+	color: #bebdbf !important;
+}
+
+.custom-menu-link {
+	color: black;
+	font-weight: bolder;
+}
+.custom-menu-link:hover {
+	color: #f2f2f2;
+	text-decoration: none;
+}
+
+.card-hover {
+	border-width: 0px !important;
+}
+.card-hover:hover .card-img-top {
+	filter: brightness(50%);
+}
+
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,40 @@
+// Body
+$theme-colors: (
+  "lightgrey": #f6f5f5,
+  "midgrey": #bebdbf,
+  "darkgrey": #403a40
+);
+
+$border-color:  #bebdbf;
+
+// Navbar
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='1.5' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-toggler-border-radius: 0;
+// $transition-collapse: 0 .65s ease;
+
+// Forms
+$input-bg: #f6f5f5;
+$input-border-color: #bebdbf;
+$input-border-radius: 1px;
+$input-border-width: 0.1rem;
+$input-placeholder-color: #6c757d;
+$input-focus-border-color: #6c757d;
+// $input-focus-box-shadow: #d30cd3;
+
+// Buttons
+$btn-border-radius: 1px;
+$btn-transition: color .05s ease-in-out, background-color .05s ease-in-out, border-color .05s ease-in-out, box-shadow .05s ease-in-out;
+
+// Lists
+$list-group-color: #000;
+$list-group-bg: transparent;
+$list-group-border-width: 0;
+$list-group-active-color: #af0caf;
+$list-group-item-padding-y: 0.1rem;
+$list-group-item-padding-x: 0rem;
+
+// Fonts
+$font-family-sans-serif: "Helvetica", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+// Custom styles
+@import 'custom';

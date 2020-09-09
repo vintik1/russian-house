@@ -1,5 +1,15 @@
 import React from "react"
+import Layout from '../components/layout'
 
-export default function Home() {
-  return <div>Hello world!</div>
-}
+const IndexPage = () => (
+  <Layout>
+    <h2>
+      <span role="img" aria-label="Waving hand">
+        👋
+      </span>{' '}
+      Hey there!
+    </h2>
+  </Layout>
+)
+
+export default IndexPage
