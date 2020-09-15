@@ -25,11 +25,10 @@ function Header () {
             <Nav.Link as={Link} to="/support" href="/support">{t('menu.support-us')}</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        {/* <Navbar.Text role="button" className="order-1 order-lg-2 lang-toggle"
-          // onClick={() => i18n.language === 'en'? i18n.changeLanguage('ru'):i18n.changeLanguage('en')}>{i18n.language}
-          onClick={() => i18n.changeLanguage('ru')}>{i18n.language}
-        </Navbar.Text> */}
-        <button onClick={() => i18n.changeLanguage('ru')}>{i18n.language}</button>
+        <Navbar.Text role="button" className="order-1 order-lg-2 lang-toggle"
+          onClick={() => i18n.language === 'en'? i18n.changeLanguage('ru'):i18n.changeLanguage('en')}>{i18n.language}
+        </Navbar.Text>
+        {/* <button onClick={() => i18n.changeLanguage('ru')}>{i18n.language}</button> */}
       </Container>
     </Navbar>
   )
