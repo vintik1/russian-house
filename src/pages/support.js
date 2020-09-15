@@ -50,25 +50,31 @@ const Support = () => {
 						<Card.Img src={kitchen} variant="top" alt="IMG" />
 						<Card.Body className="pl-0">
 							<Card.Title>Сообщество волонтеров</Card.Title>
-							<Link to="/volunteer-club" className="card-link stretched-link d-none d-md-block">Подробнее</Link>
+							<Link to="/volunteer-club" className="card-link stretched-link">
+								<p className="d-none d-md-block">Подробнее</p>
+							</Link>
 						</Card.Body>
 					</Card>
 				</Col>
 				<Col>
-					<div className="card card-hover mb-4 h-100">
+					<Card className="card-hover mb-4 h-100">
 						<Card.Img src={dining} variant="top" alt="IMG" />
 						<Card.Body className="pl-0">
 							<Card.Title>Стать членом Русского Дома</Card.Title>
-							<Link to="/become-member" className="card-link stretched-link d-none d-md-block">Подробнее</Link>
+							<Link to="/become-member" className="card-link stretched-link">
+								<p className="d-none d-md-block">Подробнее</p>
+							</Link>
 						</Card.Body>
-					</div>
+					</Card>
 				</Col>
 				<Col>
 					<Card className="card-hover mb-4 h-100">
 						<Card.Img src={crystal} variant="top" alt="IMG" />
 						<Card.Body className="pl-0">
 							<Card.Title>Помощь на ивентах</Card.Title>
-							<Link to="/help-on-events" className="card-link stretched-link d-none d-md-block">Подробнее</Link>
+							<Link to="/help-on-events" className="card-link stretched-link">
+								<p className="d-none d-md-block">Подробнее</p>
+							</Link>
 						</Card.Body>
 					</Card>
 				</Col>
