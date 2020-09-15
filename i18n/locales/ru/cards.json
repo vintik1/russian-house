@@ -1,29 +1,29 @@
-const Cards = [
+[
 	{
 		"id": "0",
 		"img": "japcar.jpg",
-		"title": "upside down house",
+		"title": "Дом вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "1",
 		"img": "japcar.jpg",
-		"title": "left right house",
+		"title": "Двор вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "2",
 		"img": "japcar.jpg",
-		"title": "hop hop house",
+		"title": "Пляж вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "3",
 		"img": "japcar.jpg",
-		"title": "house hose house",
+		"title": "Хоуз хоуз хоуз",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
@@ -44,28 +44,28 @@ const Cards = [
 	{
 		"id": "6",
 		"img": "japcar.jpg",
-		"title": "upside down house",
+		"title": "Дом вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "7",
 		"img": "japcar.jpg",
-		"title": "left right house",
+		"title": "Двор вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "8",
 		"img": "japcar.jpg",
-		"title": "hop hop house",
+		"title": "Пляж вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "9",
 		"img": "japcar.jpg",
-		"title": "house hose house",
+		"title": "Хоуз хоуз хоуз",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
@@ -86,28 +86,28 @@ const Cards = [
 	{
 		"id": "12",
 		"img": "japcar.jpg",
-		"title": "upside down house",
+		"title": "Дом вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "13",
 		"img": "japcar.jpg",
-		"title": "left right house",
+		"title": "Двор вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "14",
 		"img": "japcar.jpg",
-		"title": "hop hop house",
+		"title": "Пляж вверх ногами",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
 	{
 		"id": "15",
 		"img": "japcar.jpg",
-		"title": "house hose house",
+		"title": "Хоуз хоуз хоуз",
 		"text": "Мы построим двор вверх ногами",
 		"btn-text": "Читать далее"
 	},
@@ -126,5 +126,3 @@ const Cards = [
 		"btn-text": "Читать далее"
 	}
 ]
-
-export default Cards

@@ -1,41 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Alert from 'react-bootstrap/Alert'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import Footer from './footer'
 
-import '../css/main.scss';
+import '../css/main.css';
 
-const Layout = ({ children, data }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
         }
       }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Russian Community Hub' },
-            { name: 'keywords', content: 'Community, Russian' },
-            { name: 'author', content: '@sadanov' },
-          ]}
-        />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </>
-    )}
-  />
-)
+    }
+  `)
+  const [show, setShow] = useState(true)
+
+  return (
+    <>
+      <Helmet
+        title={data.site.siteMetadata.title}
+        meta={[
+          { name: 'description', content: 'Russian Community Hub' },
+          { name: 'keywords', content: 'Community, Russian' },
+          { name: 'author', content: '@sadanov' },
+        ]}
+      />
+      {show ? 
+        <Alert variant="dark" className="mb-0" onClose={() => setShow(false)} dismissible>
+          <Alert.Heading>Rental Service is temporary unavailable</Alert.Heading>
+          <p className="mb-0">
+            Due to Covid lockdown the Russian House is Closed for Visitors
+          </p>
+        </Alert>:null}
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: `${__dirname}/src/components/layout.js`
+        component: require.resolve(`./src/components/layout.js`)
       }
     },
     {
@@ -36,7 +36,7 @@ module.exports = {
       options: {
         locales: `./i18n/locales`,
         i18nextOptions: {
-          ns: ["common", "support"]
+          ns: ["common", "support", "cards"]
         }
       }
     }
