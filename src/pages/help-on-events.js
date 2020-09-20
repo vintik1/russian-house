@@ -9,11 +9,12 @@ import crystal from '../images/crystal.jpg'
 
 
 const HelpOnEvents = () => {
+	const {t} = useTranslation('support')
 
 	return (
 		<Container>
-			<p className="mt-4 mb-0"><small>ПОДДЕРЖКА</small></p>
-			<h3 className="mb-0">Помощь на мероприятиях</h3>
+			<p className="mt-4 mb-0 text-uppercase"><small>{t('head.support')}</small></p>
+			<h3 className="mb-0">{t('event-organization.header')}</h3>
 			<Row>
 				<Col lg={8}>
 					<img src={crystal} className="d-block w-100 my-4" alt="Figure 1" />

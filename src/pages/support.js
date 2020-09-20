@@ -49,9 +49,9 @@ const Support = () => {
 					<Card className="card-hover mb-4 h-100">
 						<Card.Img src={kitchen} variant="top" alt="IMG" />
 						<Card.Body className="pl-0">
-							<Card.Title>Сообщество волонтеров</Card.Title>
+							<Card.Title>{t('volunteering.header')}</Card.Title>
 							<Link to="/volunteer-club" className="card-link stretched-link">
-								<p className="d-none d-md-block">Подробнее</p>
+								<p className="d-none d-md-block">{t('read-more')}</p>
 							</Link>
 						</Card.Body>
 					</Card>
@@ -60,9 +60,9 @@ const Support = () => {
 					<Card className="card-hover mb-4 h-100">
 						<Card.Img src={dining} variant="top" alt="IMG" />
 						<Card.Body className="pl-0">
-							<Card.Title>Стать членом Русского Дома</Card.Title>
+							<Card.Title>{t('member.header')}</Card.Title>
 							<Link to="/become-member" className="card-link stretched-link">
-								<p className="d-none d-md-block">Подробнее</p>
+								<p className="d-none d-md-block">{t('read-more')}</p>
 							</Link>
 						</Card.Body>
 					</Card>
@@ -71,9 +71,9 @@ const Support = () => {
 					<Card className="card-hover mb-4 h-100">
 						<Card.Img src={crystal} variant="top" alt="IMG" />
 						<Card.Body className="pl-0">
-							<Card.Title>Помощь на ивентах</Card.Title>
+							<Card.Title>{t('event-organization.header')}</Card.Title>
 							<Link to="/help-on-events" className="card-link stretched-link">
-								<p className="d-none d-md-block">Подробнее</p>
+								<p className="d-none d-md-block">{t('read-more')}</p>
 							</Link>
 						</Card.Body>
 					</Card>

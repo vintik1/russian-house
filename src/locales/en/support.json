@@ -3,5 +3,15 @@
 		"support": "Support",
 		"house": "The House",
 		"donate-btn": "Make Donation"
+	},
+	"read-more": "Read more",
+	"volunteering" : {
+		"header": "Community of volunteers"
+	},
+	"member" : {
+		"header": "Become a member"
+	},
+	"event-organization" : {
+		"header": "Event organization"
 	}
 }

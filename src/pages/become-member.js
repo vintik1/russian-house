@@ -8,11 +8,12 @@ import Container from 'react-bootstrap/Container'
 import dining from '../images/dining.jpg'
 
 const BecomeMember = () => {
+	const {t} = useTranslation('support')
 
 	return (
 		<Container>
-			<p className="mt-4 mb-0"><small>ПОДДЕРЖКА</small></p>
-			<h3 className="mb-0">Стать членом Русского Дома</h3>
+			<p className="mt-4 mb-0 text-uppercase"><small>{t('head.support')}</small></p>
+			<h3 className="mb-0">{t('member.header')}</h3>
 			<Row>
 				<Col lg={8}>
 					<img src={dining} className="d-block w-100 my-4" alt="Figure 1" />

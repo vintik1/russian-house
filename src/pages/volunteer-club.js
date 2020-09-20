@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -9,11 +9,12 @@ import kitchen from '../images/kitchen.jpg'
 
 
 const VolunteerClub = () => {
+	const {t} = useTranslation('support')
 
 	return (
 		<Container>
-			<p className="mt-4 mb-0"><small>ПОДДЕРЖКА</small></p>
-			<h3 className="mb-0">Сообщество волонтеров</h3>
+			<p className="mt-4 mb-0 text-uppercase"><small>{t('head.support')}</small></p>
+			<h3 className="mb-0">{t('volunteering.header')}</h3>
 			<Row>
 				<Col lg={8}>
 					<img src={kitchen} className="d-block w-100 my-4" alt="Figure 1" />
