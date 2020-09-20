@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useTranslation } from "react-i18next"
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
-import cards from "../../i18n/locales/en/cards.json"
+import cards from "../locales/en/cards.json"
 import photo1 from '../images/backyard.jpg'
 import photo2 from '../images/backyard2.jpg'
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { useTranslation } from 'react-i18next'
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -84,7 +83,7 @@ function Footer() {
 			<Container className="d-flex flex-row justify-content-between text-muted">
 				<p className="small cursor-pointer">{t('footer.trademark')}</p>
 				<p className="small cursor-pointer">
-					Made by <a href="https://github.com/egor-sadanov" className="custom-link" target="_blank" rel="noopener noreferrer">Gosha Sadanov</a>
+					Made by <a href="https://github.com/egor-sadanov" className="custom-link" target="_blank" rel="noopener noreferrer">egor sadanov</a>
 				</p>
 			</Container>
 		</Container>

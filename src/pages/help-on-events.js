@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { useTranslation } from "react-i18next"
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -10,7 +9,6 @@ import crystal from '../images/crystal.jpg'
 
 
 const HelpOnEvents = () => {
-	const {t} = useTranslation('support')
 
 	return (
 		<Container>

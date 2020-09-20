@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { useTranslation } from "react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -10,7 +9,6 @@ import kitchen from '../images/kitchen.jpg'
 
 
 const VolunteerClub = () => {
-	const {t} = useTranslation('support')
 
 	return (
 		<Container>

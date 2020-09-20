@@ -1,19 +1,20 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import { useTranslation } from "react-i18next"
 
 
 function Header () {
-  const [t, i18n] = useTranslation('common')
+  const [t] = useTranslation("common")
+  const {language, changeLanguage} = useI18next();
 
   return (
     <Navbar collapseOnSelect as="header" expand="lg" sticky="top" bg="white" className="py-3">
       <Container>
         <Navbar.Brand>
-          <Link to="/" className="custom-brand">Russian House</Link>
+          <Link to="/" className="custom-brand">{t('brand')}</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="menu-nav" className="border-0 order-2" />
         <Navbar.Collapse id="menu-nav" className="order-3 order-lg-1">
@@ -26,9 +27,8 @@ function Header () {
           </Nav>
         </Navbar.Collapse>
         <Navbar.Text role="button" className="order-1 order-lg-2 lang-toggle"
-          onClick={() => i18n.language === 'en'? i18n.changeLanguage('ru'):i18n.changeLanguage('en')}>{i18n.language}
+          onClick={() => language === 'en'? changeLanguage('ru'):changeLanguage('en')}>{language}
         </Navbar.Text>
-        {/* <button onClick={() => i18n.changeLanguage('ru')}>{i18n.language}</button> */}
       </Container>
     </Navbar>
   )
