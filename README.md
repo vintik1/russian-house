@@ -25,6 +25,8 @@ You can view the prototype by following [the link](https://master.d3ua6t259ptf73
 - [ ] integrate Netlify CMS (on top of Gatsby) for managing event cards (add, remove, replace)
 - [ ] add calendar into Hire page for viewing availability of the RH for rent 
 - [ ] integrate Netlify CMS (on top of Gatsby) for managing event cards (add, remove, replace)
+- [ ] set transition for covid alarm when click on close
+- [ ] make alarm render after site was mounted 
 
 
 
