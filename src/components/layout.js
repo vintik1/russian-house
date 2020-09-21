@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Alert from 'react-bootstrap/Alert'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-
+import Collapse from 'react-bootstrap/Collapse'
 import Header from './header'
 import Footer from './footer'
 
@@ -21,6 +21,10 @@ const Layout = ({ children }) => {
   `)
   const [show, setShow] = useState(true)
 
+  // useEffect(() => {
+  //   setTimeout(() => setShow(true), 500)
+  // })
+
   return (
     <>
       <Helmet
@@ -31,13 +35,14 @@ const Layout = ({ children }) => {
           { name: 'author', content: '@sadanov' },
         ]}
       />
-      {show ? 
+      <Collapse in={show} appear unmountOnExit>
         <Alert variant="dark" className="mb-0" onClose={() => setShow(false)} dismissible>
           <Alert.Heading>Rental Service is temporary unavailable</Alert.Heading>
           <p className="mb-0">
             Due to Covid lockdown the Russian House is Closed for Visitors
           </p>
-        </Alert>:null}
+        </Alert>
+      </Collapse>
       <Header />
       <main>{children}</main>
       <Footer />
