@@ -17,7 +17,7 @@ function Header () {
           <Navbar.Brand>
             <Link to="/" className="custom-brand">{t('brand')}</Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="menu-nav" className="border-0 order-2" />
+          <Navbar.Toggle aria-controls="menu-nav" className="border-0 order-2 pr-0" />
           <Navbar.Collapse id="menu-nav" className="order-3 order-lg-1">
             <Nav>
               <Nav.Link as={Link} to="/events" href="/events">{t('menu.events')}</Nav.Link>
