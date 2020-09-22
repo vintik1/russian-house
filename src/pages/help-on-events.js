@@ -14,7 +14,7 @@ const HelpOnEvents = () => {
 	return (
 		<Container>
 			<p className="mt-4 mb-0 text-uppercase"><small>{t('head.support')}</small></p>
-			<h3 className="mb-0">{t('event-organization.header')}</h3>
+			<h3 className="mb-0">{t('titles.event-organization')}</h3>
 			<Row>
 				<Col lg={8}>
 					<img src={crystal} className="d-block w-100 my-4" alt="Figure 1" />

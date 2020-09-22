@@ -1,20 +1,33 @@
 import React from 'react'
 import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
-
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
-import kitchen from '../images/kitchen.jpg'
-import dining from '../images/dining.jpg'
-import crystal from '../images/crystal.jpg'
-
 
 const Support = () => {
 	const {t} = useTranslation('support')
+
+	const cards = [
+		{
+			title: "volunteering",
+			img: "kitchen.jpg",
+			path: "/volunteer-club"
+		},
+		{
+			title: "member",
+			img: "dining.jpg",
+			path: "/become-member"
+		},
+		{
+			title: "event-organization",
+			img: "crystal.jpg",
+			path: "/help-on-events"
+		}
+	]
 
 	return (
 		<Container>
@@ -45,39 +58,19 @@ const Support = () => {
 			<hr />
 			<h3 className="roslyn-font">Как помочь Дому?</h3>
 			<Row xs={1} md={2} lg={3} className="align-items-middle mt-4">
-				<Col>
-					<Card className="card-hover mb-4 h-100">
-						<Card.Img src={kitchen} variant="top" alt="IMG" />
-						<Card.Body className="pl-0">
-							<Card.Title>{t('volunteering.header')}</Card.Title>
-							<Link to="/volunteer-club" className="card-link stretched-link">
-								<p className="d-none d-md-block">{t('read-more')}</p>
-							</Link>
-						</Card.Body>
-					</Card>
-				</Col>
-				<Col>
-					<Card className="card-hover mb-4 h-100">
-						<Card.Img src={dining} variant="top" alt="IMG" />
-						<Card.Body className="pl-0">
-							<Card.Title>{t('member.header')}</Card.Title>
-							<Link to="/become-member" className="card-link stretched-link">
-								<p className="d-none d-md-block">{t('read-more')}</p>
-							</Link>
-						</Card.Body>
-					</Card>
-				</Col>
-				<Col>
-					<Card className="card-hover mb-4 h-100">
-						<Card.Img src={crystal} variant="top" alt="IMG" />
-						<Card.Body className="pl-0">
-							<Card.Title>{t('event-organization.header')}</Card.Title>
-							<Link to="/help-on-events" className="card-link stretched-link">
-								<p className="d-none d-md-block">{t('read-more')}</p>
-							</Link>
-						</Card.Body>
-					</Card>
-				</Col>
+				{cards.map((card, index) =>
+					<Col key={index}>
+						<Card className="card-hover mb-4 h-100">
+							<Card.Img src={require("../images/"+card.img)} variant="top" alt="IMG" />
+							<Card.Body className="pl-0">
+								<Card.Title>{t('titles.' + card.title)}</Card.Title>
+								<Link to={card.path} className="card-link stretched-link">
+									<p className="d-none d-md-block">{t('read-more')}</p>
+								</Link>
+							</Card.Body>
+						</Card>
+					</Col>
+        )}
 			</Row>
 		</Container>
 	)
