@@ -5,13 +5,9 @@
 		"donate-btn": "Сделать Пожертвование"
 	},
 	"read-more": "Подробнее",
-	"volunteering" : {
-		"header": "Сообщество волонтеров"
-	},
-	"member" : {
-		"header": "Стать членом Русского Дома"
-	},
-	"event-organization" : {
-		"header": "Организация мероприятий"
+	"titles": {
+		"volunteering": "Сообщество волонтеров",
+		"member": "Стать членом Русского Дома",
+		"event-organization": "Организация мероприятий"
 	}
 }

@@ -5,13 +5,9 @@
 		"donate-btn": "Make Donation"
 	},
 	"read-more": "Read more",
-	"volunteering" : {
-		"header": "Community of volunteers"
-	},
-	"member" : {
-		"header": "Become a member"
-	},
-	"event-organization" : {
-		"header": "Event organization"
+	"titles": {
+		"volunteering": "Community of volunteers",
+		"member": "Become a member",
+		"event-organization": "Event organization"
 	}
 }
