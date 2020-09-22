@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Alert from 'react-bootstrap/Alert'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
@@ -21,16 +21,12 @@ const Layout = ({ children }) => {
   `)
   const [show, setShow] = useState(true)
 
-  // useEffect(() => {
-  //   setTimeout(() => setShow(true), 500)
-  // })
-
   return (
     <>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
-          { name: 'description', content: 'Russian Community Hub' },
+          { name: 'description', content: 'Russian House Community Hub' },
           { name: 'keywords', content: 'Community, Russian' },
           { name: 'author', content: '@sadanov' },
         ]}

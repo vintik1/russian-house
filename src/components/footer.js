@@ -16,7 +16,7 @@ function Footer() {
 			<Container>
 				<Form style={{padding: "2rem"}}>
 					<Form.Group controlId="subscribeForm" className="d-flex flex-column align-items-center mb-0">
-						<Form.Label className="text-secondary text-uppercase">{t('footer.subscribe')}</Form.Label>
+						<Form.Label className="text-secondary text-uppercase text-center">{t('footer.subscribe')}</Form.Label>
 						<Form.Control type="email" placeholder={t('footer.placeholder')} style={{width: "20rem", boxShadow: "none"}} />
 					</Form.Group>
 				</Form>
