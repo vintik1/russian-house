@@ -11,7 +11,7 @@ function Header () {
   const {language, changeLanguage} = useI18next();
 
   return (
-    <header className="sticky-top">
+    <header className="sticky-top bg-white">
       <Container>
         <Navbar collapseOnSelect expand="lg" bg="white" className="py-3 px-0">
           <Navbar.Brand>
@@ -28,7 +28,8 @@ function Header () {
             </Nav>
           </Navbar.Collapse>
           <Navbar.Text role="button" className="order-1 order-lg-2 lang-toggle"
-            onClick={() => language === 'en'? changeLanguage('ru'):changeLanguage('en')}>{language}
+            onClick={() => language === 'en'? changeLanguage('ru'):changeLanguage('en')}
+            >{language}
           </Navbar.Text>
         </Navbar>
       </Container>

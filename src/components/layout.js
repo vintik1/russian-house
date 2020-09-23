@@ -1,37 +1,29 @@
-import React, { useState } from 'react'
-import Alert from 'react-bootstrap/Alert'
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+
 import Collapse from 'react-bootstrap/Collapse'
+import Alert from 'react-bootstrap/Alert'
 import Header from './header'
 import Footer from './footer'
+import SEO from './seo'
 
-import '../css/main.css';
+import '../css/main.css'
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-  const [show, setShow] = useState(true)
+const Layout = ({children}) => {
+  const [t] = useTranslation("common")
+  const [show, setShow] = useState(false)
+
+  useEffect(() =>{
+    setTimeout(() => { 
+      setShow(true) 
+    }, 300)
+  }, [])
 
   return (
     <>
-      <Helmet
-        title={data.site.siteMetadata.title}
-        meta={[
-          { name: 'description', content: 'Russian House Community Hub' },
-          { name: 'keywords', content: 'Community, Russian' },
-          { name: 'author', content: '@sadanov' },
-        ]}
-      />
-      <Collapse in={show} appear unmountOnExit>
+      <SEO />
+      <Collapse in={show} unmountOnExit>
         <Alert variant="dark" className="mb-0" onClose={() => setShow(false)} dismissible>
           <Alert.Heading>Rental Service is temporary unavailable</Alert.Heading>
           <p className="mb-0">
