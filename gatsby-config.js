@@ -20,6 +20,12 @@ module.exports = {
     //   },
     // },
     {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "russian-house-bucket",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
