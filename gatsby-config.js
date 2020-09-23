@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Russian House`,
-    siteUrl: `https://www.russianhouse.com.au`,
+    titleTemplate: " Melbourne",
     description: `Russian House community center website`,
-    author: `@sadanov`,
+    url: `https://www.russianhouse.com.au`,
+    author: "@sadanov",
   },
   plugins: [
     `gatsby-plugin-sass`,
