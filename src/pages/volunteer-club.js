@@ -7,7 +7,6 @@ import Container from 'react-bootstrap/Container'
 
 import kitchen from '../images/kitchen.jpg'
 
-
 const VolunteerClub = () => {
 	const {t} = useTranslation('support')
 

@@ -11,24 +11,6 @@ import Container from 'react-bootstrap/Container'
 const Support = () => {
 	const {t} = useTranslation('support')
 
-	const cards = [
-		{
-			title: "volunteering",
-			img: "kitchen.jpg",
-			path: "/volunteer-club"
-		},
-		{
-			title: "member",
-			img: "dining.jpg",
-			path: "/become-member"
-		},
-		{
-			title: "event-organization",
-			img: "crystal.jpg",
-			path: "/help-on-events"
-		}
-	]
-
 	return (
 		<Container>
 			<h1 className="my-5">
@@ -77,3 +59,21 @@ const Support = () => {
 } 
 
 export default Support
+
+const cards = [
+	{
+		title: "volunteering",
+		img: "kitchen.jpg",
+		path: "/volunteer-club"
+	},
+	{
+		title: "member",
+		img: "dining.jpg",
+		path: "/become-member"
+	},
+	{
+		title: "event-organization",
+		img: "crystal.jpg",
+		path: "/help-on-events"
+	}
+]
