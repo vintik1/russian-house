@@ -8,44 +8,40 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(query)
 
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: title || site.siteMetadata.defaultTitle,
+    description: description || site.siteMetadata.defaultDescription,
+    url: `${site.siteMetadata.siteUrl}${pathname}`
+  }
+
+  // const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={seo.title}
+      titleTemplate={`%s | ${site.siteMetadata.titleTemplate}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seo.description,
         },
         {
           property: `og:title`,
-          content: title,
+          content: seo.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seo.description,
         },
         {
           property: `og:type`,
@@ -61,11 +57,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: seo.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seo.description,
         },
       ].concat(meta)}
     />
@@ -82,7 +78,21 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default SEO
+
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        author
+      }
+    }
+  }
+`
