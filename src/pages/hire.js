@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-
 import DayPicker from 'react-day-picker'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
-import 'react-day-picker/lib/style.css'
 
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
+
+import 'react-day-picker/lib/style.css'
+
 
 const Hire = () => {
 	const past = {
