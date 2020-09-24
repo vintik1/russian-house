@@ -2,7 +2,7 @@
   Russian House Community Centre Website 
 </h1>
 
-You can view the prototype by following [the link](https://master.d3ua6t259ptf73.amplifyapp.com)
+You can view the prototype by following [the link](https://master.d2ew76d4b2igww.amplifyapp.com/)
 
 **Great appreciation to the whole open source community and these guys in particular**
 - React 
