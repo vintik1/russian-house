@@ -1,24 +1,60 @@
 import React, { useState } from 'react'
 import { Link, useTranslation } from "gatsby-plugin-react-i18next"
+import Img from 'gatsby-image'
+import { graphql } from 'gatsby' 
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 
 import cards from "../locales/en/cards.json"
-import photo1 from '../images/backyard.jpg'
-import photo2 from '../images/backyard2.jpg'
+// import photo1 from '../images/backyard.jpg'
+// import photo2 from '../images/backyard2.jpg'
 
-const IndexPage = () => (
-  <>
-		<Carousel />
-		<Cards />
-  </>
-)
+const IndexPage = props => {
+	const photos = {
+		photo_1: props.data.back_1.childImageSharp.fluid,
+		photo_2: props.data.back_2.childImageSharp.fluid
+	}
+
+	return (
+		<>
+			<Carousel photos={photos} />
+			<Cards photo_1={props.data.japcar.childImageSharp.fluid} />
+		</>
+	)
+}
 
 export default IndexPage
 
-function Cards() {	
+export const pageQuery = graphql`
+  query {
+    japcar: file(relativePath: { eq: "japcar.jpg" }) {
+      childImageSharp {
+        fixed(width: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+		}
+		back_1: file(relativePath: { eq: "backyard.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+		}
+		back_2: file(relativePath: { eq: "backyard2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+function Cards(photo_1) {	
 	const {t} = useTranslation('cards');
 
 	// number of cards to show
@@ -30,16 +66,18 @@ function Cards() {
         {cards.map((crd, index) => {
           if (index < number) {
             return (
-              <div className="col px-2" key={crd.id}>
-                <div className="card p-3 mb-3" style={{borderRadius: "0"}}>
-                  <img src={require("../images/"+t(crd.id + '.img'))} className="card-img-top" alt="IMG" />
-                  <div className="card-body">
-                    <h5 className="card-title">{t(crd.id + '.title')}</h5>
-                    <p className="card-text">{t(crd.id + '.text')}</p>
-                    <a href="#" className="btn btn-primary stretched-link">{t(crd.id + '.btn-text')}</a>
-                  </div>
-                </div>
-              </div>
+              <Col className="px-2" key={crd.id}>
+                <Card className="p-3 mb-3" style={{borderRadius: "0"}}>
+                  <Img fixed={photo_1} className="card-img-top" alt="IMG" />
+                  <Card.Body>
+                    <Card.Title><h5>{t(crd.id + '.title')}</h5></Card.Title>
+                    <Card.Text>{t(crd.id + '.text')}</Card.Text>
+										<Link to="/" className="btn btn-primary stretched-link">
+											{t(crd.id + '.btn-text')}
+										</Link>
+                  </Card.Body>
+                </Card>
+              </Col>
             )
           }
         })}
@@ -51,20 +89,20 @@ function Cards() {
   )
 }
 
-function Carousel() {		
+function Carousel(photos) {		
 	return (
-		<div className="container" style={{padding: '2rem'}}>
+		<Container style={{padding: '2rem'}}>
 			<div id="photoCarousel" className="carousel slide" data-ride="carousel">
 				<div className="carousel-inner">
 					<div className="carousel-item active" data-interval="10000">
-						<img src={photo1} className="d-block w-100" alt="Figure 1" />
+						<Img fluid={photos.photo_1} className="d-block w-100" alt="Figure 1" />
 						<div className="carousel-caption d-none d-md-block">
 							<p></p>
 							<p></p>
 						</div>
 					</div>
 					<div className="carousel-item" data-interval="10000">
-						<img src={photo2} className="d-block w-100" alt="Figure 1" />
+						<Img fluid={photos.photo_2} className="d-block w-100" alt="Figure 1" />
 						<div className="carousel-caption d-none d-md-block">
 							<p></p>
 							<p></p>
@@ -80,6 +118,6 @@ function Carousel() {
 					<span className="sr-only">Next</span>
 				</a>
 			</div>
-		</div>
+		</Container>
 	)
 }

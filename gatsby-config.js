@@ -12,19 +12,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `pages`,
-    //     path: `${__dirname}/src/pages`,
-    //   },
-    // },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: "russian-house-bucket",
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,6 +19,20 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `pages`,
+    //     path: `${__dirname}/src/pages`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-plugin-s3`,
+    //   options: {
+    //     bucketName: `russian-house-bucket`,
+    //     protocol: `https`
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
