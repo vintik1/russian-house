@@ -1,17 +1,11 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
+import { useI18next } from "gatsby-plugin-react-i18next"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, meta, title }) {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -21,12 +15,11 @@ function SEO({ description, lang, meta, title }) {
     url: `${site.siteMetadata.siteUrl}${pathname}`
   }
 
-  // const metaDescription = description || site.siteMetadata.description
-
+  const { language } = useI18next();
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: language,
       }}
       title={seo.title}
       titleTemplate={`%s | ${site.siteMetadata.titleTemplate}`}
