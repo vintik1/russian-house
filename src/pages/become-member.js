@@ -1,14 +1,15 @@
 import React from 'react'
-import { Link, useTranslation } from "gatsby-plugin-react-i18next"
+import Img from 'gatsby-image'
+import { useStaticQuery, graphql } from 'gatsby' 
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
-import dining from '../images/dining.jpg'
-
 const BecomeMember = () => {
 	const {t} = useTranslation('support')
+	const data = useStaticQuery(query)
 
 	return (
 		<Container>
@@ -16,7 +17,7 @@ const BecomeMember = () => {
 			<h3 className="mb-0">{t('titles.invitation')}</h3>
 			<Row>
 				<Col lg={8}>
-					<img src={dining} className="d-block w-100 my-4" alt="Figure 1" />
+					<Img fluid={data.file.childImageSharp.fluid} className="my-4" alt="Figure 1"/>
 					<p>Более 50 лет Русский Дом Мельбурна является центром русского языка и культуры в штате Виктория.</p>
 					<p>Каждый год на общем годовом собрании избирается комитет, который следит, чтобы здание Русского Дома 
 						поддерживалось в достойном состоянии, а также определяет деятельность развитие языка, культуры и традиций 
@@ -37,3 +38,15 @@ const BecomeMember = () => {
 } 
 
 export default BecomeMember
+
+const query = graphql`
+  query InvitationImg {
+    file(relativePath: { eq: "invitation.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+			}
+		}
+  }
+`

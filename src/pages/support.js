@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby' 
+import { graphql } from 'gatsby' 
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -10,9 +10,13 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 
 
-const Support = () => {
-	const data = useStaticQuery(query)
+const Support = ({ data }) => {
 	const {t} = useTranslation('support')
+	const sources = [
+    data.volunteers.childImageSharp.fluid,
+    data.invitation.childImageSharp.fluid,
+    data.eventOrganization.childImageSharp.fluid
+  ]
 
 	return (
 		<Container>
@@ -46,7 +50,7 @@ const Support = () => {
 				{cards.map((card, index) =>
 					<Col key={index}>
 						<Card className="card-hover mb-4 h-100">
-							<Img fluid={data.invitation.childImageSharp.fluid} alt="IMG" />
+							<Img fluid={sources[index]} alt="IMG" />
 							<Card.Body className="pl-0">
 								<Card.Title>{t('titles.' + card.title)}</Card.Title>
 								<Link to={card.path} className="card-link stretched-link">
@@ -63,45 +67,31 @@ const Support = () => {
 
 export default Support
 
-// const usePhotoPack = ({index}) => {
-	const query = graphql`
-		query Q3{
-			volunteers: file(relativePath: { eq: "volunteers-cp.jpg" }) {
-				childImageSharp {
-					fluid {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			invitation: file(relativePath: { eq: "invitation.jpg" }) {
-				childImageSharp {
-					fluid {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			eventOrganization: file(relativePath: { eq: "event-organization-cp.jpg" }) {
-				childImageSharp {
-					fluid {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-		}
-	`
-
-// 	switch(index) {
-//     case 1:
-// 			return <Img fluid={data.volunteers.childImageSharp.fluid} alt="IMG" />;
-// 		case 2:
-// 			return <Img fluid={data.invitation.childImageSharp.fluid} alt="IMG" />;
-// 		case 3:
-// 			return <Img fluid={data.eventOrganization.childImageSharp.fluid} alt="IMG" />;
-//     default:
-//       return null;
-//   }
-// }
-
+export const query = graphql`
+  query SupportImages {
+    volunteers: file(relativePath: { eq: "volunteers-cp.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    invitation: file(relativePath: { eq: "invitation.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    eventOrganization: file(relativePath: { eq: "event-organization-cp.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 const cards = [
 	{
@@ -117,6 +107,6 @@ const cards = [
 	{
 		title: "event-organization",
 		img: "event-organization.jpg",
-		path: "/help-on-events"
+		path: "/event-organization"
 	}
 ]

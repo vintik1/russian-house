@@ -1,14 +1,15 @@
 import React from 'react'
-import { Link, useTranslation } from "gatsby-plugin-react-i18next"
+import Img from 'gatsby-image'
+import { useStaticQuery, graphql } from 'gatsby' 
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 
-import kitchen from '../images/kitchen.jpg'
-
 const VolunteerClub = () => {
 	const {t} = useTranslation('support')
+	const data = useStaticQuery(query)
 
 	return (
 		<Container>
@@ -16,7 +17,7 @@ const VolunteerClub = () => {
 			<h3 className="mb-0">{t('titles.volunteering')}</h3>
 			<Row>
 				<Col lg={8}>
-					<img src={kitchen} className="d-block w-100 my-4" alt="Figure 1" />
+					<Img fluid={data.file.childImageSharp.fluid} className="my-4" alt="Figure 1"/>
 					<p>Сообщество волонтеров в Мельбурне приглашает желающих принять участие в проектах русского дома.</p>
 					<p>Вы сможете ознакомиться и получить знания, а также поделиться опытом работы вместе с активной частью русских жителей Австралии.</p>
 					<p>Вы узнаете, как функционирует русская община, находящаяся так далеко от родной страны, 
@@ -35,3 +36,15 @@ const VolunteerClub = () => {
 } 
 
 export default VolunteerClub
+
+const query = graphql`
+  query VolunteerImg {
+    file(relativePath: { eq: "volunteers.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+			}
+		}
+  }
+`
