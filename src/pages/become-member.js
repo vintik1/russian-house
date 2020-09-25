@@ -13,7 +13,7 @@ const BecomeMember = () => {
 	return (
 		<Container>
 			<p className="mt-4 mb-0 text-uppercase"><small>{t('head.support')}</small></p>
-			<h3 className="mb-0">{t('titles.member')}</h3>
+			<h3 className="mb-0">{t('titles.invitation')}</h3>
 			<Row>
 				<Col lg={8}>
 					<img src={dining} className="d-block w-100 my-4" alt="Figure 1" />

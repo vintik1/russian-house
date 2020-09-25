@@ -7,7 +7,7 @@
 	"read-more": "Read more",
 	"titles": {
 		"volunteering": "Community of volunteers",
-		"member": "Become a member",
-		"event-organization": "Event organization"
+		"invitation": "Become a member",
+		"eventOrganization": "Event organization"
 	}
 }
