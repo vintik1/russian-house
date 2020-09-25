@@ -21,12 +21,13 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [ ] hide header when scrolling down
 - [ ] add dropdowns for navbar links
 - [ ] add GraphQL for managing data sources (static content and book library)
-- [ ] disable blur around input forms and buttons
+- [x] disable blur around input forms and buttons
 - [ ] integrate Netlify CMS (on top of Gatsby) for managing event cards (add, remove, replace)
-- [ ] add calendar into Hire page for viewing availability of the RH for rent 
-- [ ] integrate Netlify CMS (on top of Gatsby) for managing event cards (add, remove, replace)
-- [ ] set transition for covid alarm when click on close
-- [ ] make alarm render after site was mounted 
+- [x] add calendar into Hire page for viewing availability of the RH for rent 
+- [x] set transition for covid alarm when click on close
+- [x] make alarm render after site was mounted 
+- [ ] add paypal plugin for donation button
+- [ ] force router stay on the same page after reload
 
 
 
