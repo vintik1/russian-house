@@ -28,6 +28,11 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [x] make alarm render after site was mounted 
 - [ ] add paypal plugin for donation button
 - [ ] force router stay on the same page after reload
+- [ ] resolve custom font appearence on build version
+- [ ] add "X" icon on navbar collapse toggle
+- [ ] adjust colors for dark mode
+
+
 
 
 
