@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import { useI18next } from "gatsby-plugin-react-i18next"
 
-function SEO({ description, meta, title }) {
+function SEO ({ description, meta, title }) {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -19,7 +19,7 @@ function SEO({ description, meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: language,
+        lang: language === "en"? "en-au":"ru-au",
       }}
       title={seo.title}
       titleTemplate={`%s | ${site.siteMetadata.titleTemplate}`}
