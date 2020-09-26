@@ -18,9 +18,9 @@ function SEO ({ description, meta, title }) {
   const { language } = useI18next();
   return (
     <Helmet
-      htmlAttributes={{
-        lang: language === "en"? "en-au":"ru-au",
-      }}
+      // htmlAttributes={{
+      //   lang: language === "en"? "en-au":"ru-au",
+      // }}
       title={seo.title}
       titleTemplate={`%s | ${site.siteMetadata.titleTemplate}`}
       meta={[
