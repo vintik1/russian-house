@@ -47,8 +47,9 @@ module.exports = {
         defaultLanguage: `en`,
   
         i18nextOptions: {
-          lng: "en",
-          ns: ["common", "cards", "support"],
+          // lng: "en",
+          // fallbackLng: "en",
+          // ns: ["common", "cards", "support"],
           interpolation: {
             escapeValue: false
           }
