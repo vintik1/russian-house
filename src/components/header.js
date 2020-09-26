@@ -27,7 +27,7 @@ function Header () {
               <Nav.Link as={Link} to="/support" href="/support">{t('menu.support-us')}</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Text role="button" className="order-1 order-lg-2 lang-toggle"
+          <Navbar.Text role="button" className="order-1 order-lg-2 lang-toggle ml-auto"
             onClick={() => language === 'en'? changeLanguage('ru'):changeLanguage('en')}
             >{language}
           </Navbar.Text>
