@@ -19,7 +19,6 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [ ] hide header when scrolling down
 - [ ] add flexible video background for Home page   
 - [ ] add dropdowns for navbar links
-<!-- - [x] make scrollable and collapsable navbar inside the header -->
 - [x] add calendar into Hire page for viewing availability of the RH for rent 
 - [x] set transition for covid alarm when click on close
 - [x] make alarm render after site was mounted 
@@ -28,7 +27,7 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [x] put link heading to the Russian House google location in the footer
 
 **Backend Design Task List**
-- [ ] add GraphQL for managing data sources (static content and library of books)
+- [ ] develop GraphQL queries for managing data sources (static content and library of books)
 - [ ] add paypal plugin for donation button
 - [ ] force router stay on the same page after reload
 - [ ] fetch json data to the Home page event cards using GraphQL
@@ -47,7 +46,6 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [ ] provide user tools for adding/deleting/editing blog posts
 - [ ] make dashboard
 - [ ] allow the user to browse submitted forms
-- [ ] allow the user to browse subscription lists
 - [ ] conduct unit tests
 
 
