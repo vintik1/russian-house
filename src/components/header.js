@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import { Link, useI18next } from "gatsby-plugin-react-i18next"
 
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
@@ -7,8 +7,7 @@ import Nav from 'react-bootstrap/Nav'
 
 
 function Header () {
-  const [t] = useTranslation("common")
-  const {language, changeLanguage} = useI18next();
+  const {t, language, changeLanguage} = useI18next("common");
 
   return (
     <header className="sticky-top bg-white">

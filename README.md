@@ -12,29 +12,43 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - i18next 
 
 
-**Task List**
-- [x] put link heading to the Russian House google location in the footer
-- [x] add flexible video background for Home page   
-- [x] make language toggle {RU, EN}
-- [x] pass json data to the Home page event cards
-- [x] make scrollable and collapsable navbar inside the header
+**Frontend Design Task List**
+- [ ] resolve custom font appearence on build version
+- [ ] adjust colors for dark mode
+- [ ] add "X" icon on navbar collapse toggle
 - [ ] hide header when scrolling down
+- [ ] add flexible video background for Home page   
 - [ ] add dropdowns for navbar links
-- [ ] add GraphQL for managing data sources (static content and book library)
-- [x] disable blur around input forms and buttons
-- [ ] integrate Netlify CMS (on top of Gatsby) for managing event cards (add, remove, replace)
+<!-- - [x] make scrollable and collapsable navbar inside the header -->
 - [x] add calendar into Hire page for viewing availability of the RH for rent 
 - [x] set transition for covid alarm when click on close
 - [x] make alarm render after site was mounted 
+- [x] disable blur around input forms and buttons
+- [x] make language toggle {RU, EN} *
+- [x] put link heading to the Russian House google location in the footer
+
+**Backend Design Task List**
+- [ ] add GraphQL for managing data sources (static content and library of books)
 - [ ] add paypal plugin for donation button
 - [ ] force router stay on the same page after reload
-- [ ] resolve custom font appearence on build version
-- [ ] add "X" icon on navbar collapse toggle
-- [ ] adjust colors for dark mode
+- [ ] fetch json data to the Home page event cards using GraphQL
+- [ ] save submitted forms on Hire page
+- [ ] implement DatePicker component
+- [ ] conduct unit tests
 
+**Database Design Task List**
+- [ ] design database schema for managing blog posts
+- [ ] design subscription lists
+- [ ] conduct unit tests
 
-
-
+**CMS Design Task List**
+- [ ] integrate Netlify CMS (on top of Gatsby) for managing event cards (add, remove, replace)
+- [ ] develop secure user authentication system
+- [ ] provide user tools for adding/deleting/editing blog posts
+- [ ] make dashboard
+- [ ] allow the user to browse submitted forms
+- [ ] allow the user to browse subscription lists
+- [ ] conduct unit tests
 
 
 
