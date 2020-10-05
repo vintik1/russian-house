@@ -50,7 +50,7 @@ const Support = ({ data }) => {
 				{cards.map((card, index) =>
 					<Col key={index}>
 						<Card className="card-hover mb-4 h-100">
-							<Img fluid={sources[index]} alt="IMG" />
+							<Card.Img as={Img} variant="top" fluid={sources[index]} alt="IMG" />
 							<Card.Body className="pl-0">
 								<Card.Title>{t('titles.' + card.title)}</Card.Title>
 								<Link to={card.path} className="card-link stretched-link">
