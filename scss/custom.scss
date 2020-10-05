@@ -20,8 +20,8 @@
 	outline: 0;
 }
 
-.cursor-pointer{
-	cursor: default;
+.cursor-pointer {
+	cursor: pointer;
 }
 
 .subscribe-btn {
@@ -120,6 +120,6 @@
 .card-hover {
 	border-width: 0px !important;
 }
-.card-hover:hover .card-img-top {
-	filter: brightness(65%);
+.card-hover:hover > .card-img-top {
+	filter: brightness(65%) !important;
 }
