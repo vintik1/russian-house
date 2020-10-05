@@ -15,6 +15,7 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Collapse from 'react-bootstrap/Collapse'
+import Carousel from 'react-bootstrap/Carousel'
 
 import 'react-day-picker/lib/style.css'
 import imedg from "../images/kitchen.jpg"
@@ -33,8 +34,13 @@ const Hire = () => {
 			<Accordion>
 				<Container fluid className="border p-0" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
-						<Col>
-							<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+						<Col as={Carousel} indicators={false}>
+							<Carousel.Item>
+								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+							</Carousel.Item>
+							<Carousel.Item>
+								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+							</Carousel.Item>
 						</Col>
 						<Col className="d-flex flex-column text-center justify-content-center p-5">
 							<h4 className="text-uppercase">Янтарная комната</h4>
@@ -64,9 +70,6 @@ const Hire = () => {
 				</Container>
 				<Container fluid className="border p-0" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
-						<Col>
-							<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 2"/>
-						</Col>
 						<Col className="d-flex flex-column text-center justify-content-center p-5">
 							<h4 className="text-uppercase">Хрустальный зал</h4>
 							<p>Главное помещение русского дома - “Хрустальный зал” находится на первом этаже, 
@@ -75,14 +78,22 @@ const Hire = () => {
 								<ChevronDownIcon />
 							</Accordion.Toggle>
 						</Col>
+						<Col as={Carousel} indicators={false}>
+							<Carousel.Item>
+								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+							</Carousel.Item>
+							<Carousel.Item>
+								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+							</Carousel.Item>
+						</Col>
 					</Row>
 					<Accordion.Collapse eventKey="1">
 						<Row xs={1} lg={2}>
-							<Col className="d-flex flex-column text-center justify-content-center py-2 order-2">
+							<Col className="d-flex flex-column text-center justify-content-center py-2 order-1">
 								<p className="mb-0">Availability Calendar</p>
 								<DayPicker fromMonth={new Date()} disabledDays={past} />
 							</Col>
-							<Col className="d-flex flex-column text-center justify-content-center py-2 order-1">
+							<Col className="d-flex flex-column text-center justify-content-center py-2 order-2">
 								<p className="mx-5">Much evil soon high in hope do view. Out may few northward believing attempted.<br />
 									Yet timed being songs marry one defer men our. Although finished blessing do of. <br />
 									Consider speaking me prospect whatever if. Ten nearer rather hunted six parish indeed number. <br />
