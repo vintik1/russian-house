@@ -32,9 +32,9 @@ const Hire = () => {
 	return (
 		<Container className="my-5">
 			<Accordion>
-				<Container fluid className="border p-0" style={{marginBottom: "4rem"}}>
+				<Container fluid className="border" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
-						<Col as={Carousel} indicators={false}>
+						<Col as={Carousel} indicators={false} className="p-0">
 							<Carousel.Item>
 								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
 							</Carousel.Item>
@@ -68,7 +68,7 @@ const Hire = () => {
 						</Row>
 					</Accordion.Collapse>
 				</Container>
-				<Container fluid className="border p-0" style={{marginBottom: "4rem"}}>
+				<Container fluid className="border" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
 						<Col className="d-flex flex-column text-center justify-content-center p-5">
 							<h4 className="text-uppercase">Хрустальный зал</h4>
@@ -78,7 +78,7 @@ const Hire = () => {
 								<ChevronDownIcon />
 							</Accordion.Toggle>
 						</Col>
-						<Col as={Carousel} indicators={false}>
+						<Col as={Carousel} indicators={false} className="p-0">
 							<Carousel.Item>
 								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
 							</Carousel.Item>
