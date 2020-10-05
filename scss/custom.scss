@@ -7,7 +7,7 @@
 }
 
 .custom-brand {
-	font: 1.5rem "RoslynGothic";
+	// font: 1.5rem "RoslynGothic";
 	color: #000;
 }
 .custom-brand:hover {
@@ -22,6 +22,22 @@
 
 .cursor-pointer{
 	cursor: default;
+}
+
+.chevron-down {
+	width: 4rem !important;
+	color: #6c757d !important;
+	margin: auto;
+	transition: transform 0.4s ease !important;
+}
+.chevron-down:hover {
+	transform: translateY(10px);
+}
+.chevron-down:focus {
+	// border-color: #fff;
+	box-shadow: none !important;
+	// outline-color: white !important;
+	outline: 0;
 }
 
 // .nav-scroller {
