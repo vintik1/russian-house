@@ -45,7 +45,8 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [ ] develop secure user authentication system
 - [ ] provide user tools for adding/deleting/editing blog posts
 - [ ] make dashboard
-- [ ] allow the user to browse submitted forms
+- [ ] allow  user to browse submitted forms
+- [ ] allow user to preview changes of site appearence
 - [ ] conduct unit tests
 
 
