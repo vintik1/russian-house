@@ -4,6 +4,7 @@ import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import MenuIcon from "../svg/menu.svg"
 
 
 function Header () {
@@ -16,7 +17,7 @@ function Header () {
           <Navbar.Brand>
             <Link to="/" className="custom-brand">{t('brand')}</Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="menu-nav" className="border-0 order-2 pr-0" />
+          <Navbar.Toggle as={MenuIcon} aria-controls="menu-nav" className="cursor-pointer border-0 order-2 pr-0" />
           <Navbar.Collapse id="menu-nav" className="order-3 order-lg-1">
             <Nav>
               <Nav.Link as={Link} to="/events" href="/events">{t('menu.events')}</Nav.Link>
