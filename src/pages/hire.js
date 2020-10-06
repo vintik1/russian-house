@@ -70,21 +70,21 @@ const Hire = () => {
 				</Container>
 				<Container fluid className="border" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
-						<Col className="d-flex flex-column text-center justify-content-center p-5">
+						<Col as={Carousel} indicators={false} className="p-0 order-lg-1">
+							<Carousel.Item>
+								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+							</Carousel.Item>
+							<Carousel.Item>
+								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
+							</Carousel.Item>
+						</Col>
+						<Col className="d-flex flex-column text-center justify-content-center order-lg-2 p-5">
 							<h4 className="text-uppercase">Янтарная комната</h4>
 							<p>На втором этаже расположена - “Янтарная комната” помещение сдается под 
 								проведение менее крупных мероприятий, его вместительность максимум 80 человек</p>
 							<Accordion.Toggle as={Button} variant="link" className="chevron-down" eventKey="1">
 								<ChevronDownIcon />
 							</Accordion.Toggle>
-						</Col>
-						<Col as={Carousel} indicators={false} className="p-0">
-							<Carousel.Item>
-								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
-							</Carousel.Item>
-							<Carousel.Item>
-								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
-							</Carousel.Item>
 						</Col>
 					</Row>
 					<Accordion.Collapse eventKey="1">
