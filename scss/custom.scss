@@ -30,7 +30,7 @@
 	border-left: none !important;
 }
 .subscribe-btn:hover {
-	background-color: #6c757d !important;
+	background-color: #bebdbf !important;
 }
 
 .chevron-down {
@@ -45,6 +45,14 @@
 }
 .chevron-down:focus {
 	box-shadow: none !important;
+}
+
+.custom-drop {
+	text-decoration: none !important;
+	color: #000;
+}
+.custom-drop:hover {
+	color: #6c757d;
 }
 
 // .nav-scroller {
