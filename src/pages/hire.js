@@ -43,9 +43,9 @@ const Hire = () => {
 							</Carousel.Item>
 						</Col>
 						<Col className="d-flex flex-column text-center justify-content-center p-5">
-							<h4 className="text-uppercase">Янтарная комната</h4>
-							<p>На втором этаже расположена - “Янтарная комната” помещение сдается под 
-								проведение менее крупных мероприятий, его вместительность максимум 80 человек</p>
+							<h4 className="text-uppercase">Хрустальный зал</h4>
+							<p>Главное помещение русского дома - “Хрустальный зал” находится на первом этаже, 
+								оно вмещает в себя до максимум 100 человек и имеет свой отдельный вход с улицы.</p>
 							<Accordion.Toggle as={Button} variant="link" className="chevron-down" eventKey="0">
 								<ChevronDownIcon />
 							</Accordion.Toggle>
@@ -71,9 +71,9 @@ const Hire = () => {
 				<Container fluid className="border" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
 						<Col className="d-flex flex-column text-center justify-content-center p-5">
-							<h4 className="text-uppercase">Хрустальный зал</h4>
-							<p>Главное помещение русского дома - “Хрустальный зал” находится на первом этаже, 
-								оно вмещает в себя до максимум 100 человек и имеет свой отдельный вход с улицы.</p>
+							<h4 className="text-uppercase">Янтарная комната</h4>
+							<p>На втором этаже расположена - “Янтарная комната” помещение сдается под 
+								проведение менее крупных мероприятий, его вместительность максимум 80 человек</p>
 							<Accordion.Toggle as={Button} variant="link" className="chevron-down" eventKey="1">
 								<ChevronDownIcon />
 							</Accordion.Toggle>
