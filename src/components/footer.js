@@ -23,17 +23,18 @@ function Footer() {
 					{t('footer.subscribe')}
 				</label>
 				{ submitted ? 
-					<p className="mx-auto">Thank you. We have added your email to the subscription list.</p> 
+					<p className="text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
 					:
 					<InputGroup className="d-flex justify-content-center mb-4">
 						<FormControl
 							id="subscribe"
+							type="email"
 							placeholder={t('footer.placeholder')}
 							aria-label="subscribe"
 							style={{maxWidth: "20rem", boxShadow: "none"}}
 						/>
 						<InputGroup.Append>
-							<Button variant="outline-secondary" className="subscribe-btn" onClick={() => setSubmit(true)}>
+							<Button variant="outline-secondary" type="submit" className="subscribe-btn" onClick={() => setSubmit(true)}>
 								<SubscribeIcon />
 							</Button>
 						</InputGroup.Append>
