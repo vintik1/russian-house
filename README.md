@@ -2,8 +2,11 @@
   Russian House Community Centre Website 
 </h1>
 
-The core of this SPA is Gatsby's default starter with i18next plugin to support internationalization,
-Netlify CMS for editing content of the website and Bootstrap as the main toolkit.<br />
+The core of this SPA is Gatsby's default starter with integration of the following plugins
+- i18next to support internationalization for Russian speaking visitors
+- Netlify CMS for editing content of the website
+- Bootstrap as the main toolkit
+
 The website is hosted and deployed on AWS Amplify Console.
 
 You can view the prototype by following [the link](https://master.d2ew76d4b2igww.amplifyapp.com/)
@@ -15,6 +18,7 @@ You can view the prototype by following [the link](https://master.d2ew76d4b2igww
 - [ ] hide header when scrolling down
 - [ ] add flexible video background for Home page   
 - [ ] add dropdowns for navbar links
+- [ ] add accessibility to the website
 - [x] add calendar into Hire page for viewing availability of the RH for rent 
 - [x] set transition for covid alarm when click on close
 - [x] make alarm render after site was mounted 
