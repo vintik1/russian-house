@@ -2,7 +2,7 @@
   Russian House Community Centre Website 
 </h1>
 
-The core of this SPA is Gatsby's default starter with integration of the following plugins
+The core of this SPA is Gatsby's default starter with integration of the following plugins:
 - i18next to support internationalization for Russian speaking visitors
 - Netlify CMS for editing content of the website
 - Bootstrap as the main toolkit
