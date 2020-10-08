@@ -1,3 +1,8 @@
+/**
+ * support.js
+ * Created by Egor Sadanov (@sadanov)
+ * This component represents support page.
+ */
 import React from 'react'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby' 

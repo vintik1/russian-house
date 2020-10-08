@@ -1,3 +1,12 @@
+/**
+ * header.js
+ * Created by Egor Sadanov (@sadanov)
+ *
+ * This function returns the header of the website.
+ *
+ * 1. It provides navigation to other site's pages.
+ * 2. It provides home page button.
+ */
 import React from 'react'
 import { Link, useI18next } from "gatsby-plugin-react-i18next"
 

@@ -1,3 +1,8 @@
+/**
+ * volunteer-club.js
+ * Created by Egor Sadanov (@sadanov)
+ * This component represents volunteer club page.
+ */
 import React from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby' 

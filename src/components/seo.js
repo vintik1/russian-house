@@ -1,3 +1,11 @@
+/**
+ * seo.js
+ * Created by Egor Sadanov (@sadanov)
+ *
+ * This function returns the seo of the website's index page.
+ *
+ * 1. It provides metatags for search engines.
+ */
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"

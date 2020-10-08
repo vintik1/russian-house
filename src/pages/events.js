@@ -1,3 +1,8 @@
+/**
+ * events.js
+ * Created by Egor Sadanov (@sadanov)
+ * This component represents events page.
+ */
 import React, { useState } from 'react'
 import { useTranslation } from "gatsby-plugin-react-i18next"
 

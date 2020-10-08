@@ -1,3 +1,13 @@
+/**
+ * footer.js
+ * Created by Egor Sadanov (@sadanov)
+ *
+ * This function returns the footer of the website.
+ *
+ * 1. It allows to subscribe to the newsletters.
+ * 2. It provides information about the location of the House.
+ * 3. It provides navigation to other site's pages.
+ */
 import React, { useState } from 'react'
 import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 

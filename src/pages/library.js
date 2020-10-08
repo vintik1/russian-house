@@ -1,3 +1,8 @@
+/**
+ * library.js
+ * Created by Egor Sadanov (@sadanov)
+ * This functional component represents library page.
+ */
 import React, {useState} from 'react';
 import books from "../data/db.json";
 

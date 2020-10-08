@@ -1,5 +1,10 @@
 import React from 'react'
 import Img from 'gatsby-image'
+/**
+ * hire.js
+ * Created by Egor Sadanov (@sadanov)
+ * This component represents hire page.
+ */
 import { useStaticQuery, graphql } from 'gatsby' 
 import { useTranslation } from "gatsby-plugin-react-i18next"
 

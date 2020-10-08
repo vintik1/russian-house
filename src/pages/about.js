@@ -1,3 +1,8 @@
+/**
+ * about.js
+ * Created by Egor Sadanov (@sadanov)
+ * This component represents about page.
+ */
 import React from 'react'
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Container from 'react-bootstrap/Container'

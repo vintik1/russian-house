@@ -1,3 +1,8 @@
+/**
+ * become-member.js
+ * Created by Egor Sadanov (@sadanov)
+ * This component represents become member page.
+ */
 import React from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby' 
