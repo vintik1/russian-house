@@ -8,7 +8,7 @@ The website is hosted and deployed on AWS Amplify Console.
 
 You can view the prototype by following [the link](https://master.d2ew76d4b2igww.amplifyapp.com/)
 
-<hr style="border-width: 0.5px"/>
+<hr style="border: 0.5px"/>
 
 **Frontend Design Task List**
 - [ ] resolve custom font appearence on build version
