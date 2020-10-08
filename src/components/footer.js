@@ -22,10 +22,9 @@ function Footer() {
 				<label htmlFor="subscribe" className="text-secondary text-uppercase text-center">
 					{t('footer.subscribe')}
 				</label>
-				{ submitted ? 
-					<p className="text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
-					:
-					<InputGroup className="d-flex justify-content-center mb-4">
+				{ submitted 
+				? <p className="text-secondary text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
+				:	<InputGroup className="d-flex justify-content-center mb-4">
 						<FormControl
 							id="subscribe"
 							type="email"
