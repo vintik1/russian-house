@@ -3,12 +3,12 @@
 </h1>
 
 The core of this SPA is Gatsby's default starter with i18next plugin to support internationalization,
-Netlify CMS for for editing content of the website and Bootstrap as the main toolkit.
+Netlify CMS for editing content of the website and Bootstrap as the main toolkit.<br />
 The website is hosted and deployed on AWS Amplify Console.
 
 You can view the prototype by following [the link](https://master.d2ew76d4b2igww.amplifyapp.com/)
 
-<hr />
+<hr style="border-width: 0.5px"/>
 
 **Frontend Design Task List**
 - [ ] resolve custom font appearence on build version
