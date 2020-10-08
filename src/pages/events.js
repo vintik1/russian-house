@@ -64,7 +64,7 @@ const Events = () => {
 				</Nav.Item>
 			</Nav>
 			<hr className="my-0" />
-			<Container fluid className="text-center" style={{margin: "5rem"}}>
+			<Container fluid className="text-center" style={{marginTop: "5rem", marginBottom: "5rem"}}>
 				<h2>{t('fail')}</h2>
 			</Container>
 		</Container>
