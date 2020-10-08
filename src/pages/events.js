@@ -3,50 +3,46 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 
 import Nav from 'react-bootstrap/Nav'
 import NavItem from 'react-bootstrap/Nav'
-
 import Dropdown from 'react-bootstrap/Dropdown'
-import Button from 'react-bootstrap/Button'
-
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import DayPickerInput from 'react-day-picker/DayPickerInput'
-import 'react-day-picker/lib/style.css'
-
 import Container from 'react-bootstrap/Container'
+import DayPickerInput from 'react-day-picker/DayPickerInput'
+
 import ArrowDownIcon from "../svg/arrow-down.svg"
 import CalendarIcon from "../svg/calendar.svg"
+import 'react-day-picker/lib/style.css'
 
 
 const Events = () => {
 	const {t} = useTranslation('events')
-	const [eventTitle, setEventTitle] = useState("All Events")
-	const [auditory, setAuditory] = useState("Auditory")
+	const [eventTitle, setEventTitle] = useState(t('events.all'))
+	const [auditory, setAuditory] = useState(t('auditory.any'))
 
 	return (
 		<Container>
-			<h1 className="my-5">{t('events')}</h1>
-			<Nav className="mb-3">
-				<Dropdown as={NavItem} className="mr-4">
+			<h1 className="my-5">{t('header')}</h1>
+			<Nav className="flex-column flex-lg-row">
+				<Dropdown as={NavItem} className="mr-4 mb-3">
 					<Dropdown.Toggle as={CustomToggle} id="events-type">
 						{eventTitle}
 					</Dropdown.Toggle>
 					<Dropdown.Menu>
-						<Dropdown.Item href="#/action-1" onClick={() => setEventTitle("Past Events")}>Past Events</Dropdown.Item>
-						<Dropdown.Item href="#/action-2" onClick={() => setEventTitle("Current Events")}>Current Events</Dropdown.Item>
-						<Dropdown.Item href="#/action-3"onClick={() => setEventTitle("Upcoming")}>Upcoming</Dropdown.Item>
+						<Dropdown.Item href="#/action-1" onClick={() => setEventTitle(t('events.past'))}>{t('events.past')}</Dropdown.Item>
+						<Dropdown.Item href="#/action-2" onClick={() => setEventTitle(t('events.current'))}>{t('events.current')}</Dropdown.Item>
+						<Dropdown.Item href="#/action-3"onClick={() => setEventTitle(t('events.upcoming'))}>{t('events.upcoming')}</Dropdown.Item>
 					</Dropdown.Menu>
 				</Dropdown>
-				<Dropdown as={NavItem} className="mr-4">
+				<Dropdown as={NavItem} className="mr-4 mb-3">
 					<Dropdown.Toggle as={CustomToggle} id="events-type">
 						{auditory}
 					</Dropdown.Toggle>
 					<Dropdown.Menu>
-						<Dropdown.Item href="#/action-1" onClick={() => setAuditory("Any Auditory")}>Any Auditory</Dropdown.Item>
-						<Dropdown.Item href="#/action-2" onClick={() => setAuditory("Kids")}>Kids</Dropdown.Item>
-						<Dropdown.Item href="#/action-3" onClick={() => setAuditory("Youth")}>Youth</Dropdown.Item>
-						<Dropdown.Item href="#/action-4" onClick={() => setAuditory("Elders")}>Elders</Dropdown.Item>
+						<Dropdown.Item href="#/action-1" onClick={() => setAuditory(t('auditory.any'))}>{t('auditory.any')}</Dropdown.Item>
+						<Dropdown.Item href="#/action-2" onClick={() => setAuditory(t('auditory.kids'))}>{t('auditory.kids')}</Dropdown.Item>
+						<Dropdown.Item href="#/action-3" onClick={() => setAuditory(t('auditory.youth'))}>{t('auditory.youth')}</Dropdown.Item>
+						<Dropdown.Item href="#/action-4" onClick={() => setAuditory(t('auditory.elders'))}>{t('auditory.elders')}</Dropdown.Item>
 					</Dropdown.Menu>
 				</Dropdown>
-				<Nav.Item>
+				<Nav.Item className="mb-3">
 					<DayPickerInput 
 						component={ props => 
 							<div>
@@ -63,15 +59,14 @@ const Events = () => {
 								/>
 							</div>
 						} 
-						value="Pick Date" 
-						style={{}} 
+						value={t('date')} 
 					/>
 				</Nav.Item>
 			</Nav>
-			<hr />
-			<div>
-
-			</div>
+			<hr className="my-0" />
+			<Container fluid className="text-center" style={{margin: "5rem"}}>
+				<h2>{t('fail')}</h2>
+			</Container>
 		</Container>
 	)
 } 
