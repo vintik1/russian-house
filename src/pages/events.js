@@ -7,8 +7,8 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import Container from 'react-bootstrap/Container'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 
-import ArrowDownIcon from "../svg/arrow-down.svg"
-import CalendarIcon from "../svg/calendar.svg"
+import ArrowDownIcon from "../images/svg/arrow-down.svg"
+import CalendarIcon from "../images/svg/calendar.svg"
 import 'react-day-picker/lib/style.css'
 
 

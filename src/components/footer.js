@@ -3,13 +3,12 @@ import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
+import ListGroup from 'react-bootstrap/ListGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
-import SubscribeIcon from "../svg/send.svg"
-import ListGroup from 'react-bootstrap/ListGroup'
+import SubscribeIcon from "../images/svg/send.svg"
 
 
 function Footer() {

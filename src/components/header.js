@@ -4,7 +4,7 @@ import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import MenuIcon from "../svg/menu.svg"
+import MenuIcon from "../images/svg/menu.svg"
 
 
 function Header () {

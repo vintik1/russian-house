@@ -12,8 +12,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import DayPicker from 'react-day-picker'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
-import ChevronDownIcon from "../svg/chevron-down.svg"
-import CalendarIcon from "../svg/calendar.svg"
+import ChevronDownIcon from "../images/svg/chevron-down.svg"
+import CalendarIcon from "../images/svg/calendar.svg"
 
 import 'react-day-picker/lib/style.css'
 
