@@ -1,3 +1,17 @@
 {
-	"events": "Events"
+	"header": "Events",
+	"events": {
+		"all": "All events",
+		"past": "Past events",
+		"current": "Current events",
+		"upcoming": "Upcoming events"
+	},
+	"auditory": {
+		"any": "Any auditory",
+		"kids": "Kids",
+		"youth": "Youth",
+		"elders": "Elder generation"
+	},
+	"date": "Pick date",
+	"fail": "Couldn't find anything"
 }
