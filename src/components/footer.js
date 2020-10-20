@@ -8,14 +8,14 @@
  * 2. It provides information about the location of the House.
  * 3. It provides navigation to other site's pages.
  */
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
 import ListGroup from 'react-bootstrap/ListGroup'
-import FormControl from 'react-bootstrap/FormControl'
+import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import SubscribeIcon from "../images/svg/send.svg"
@@ -23,7 +23,14 @@ import SubscribeIcon from "../images/svg/send.svg"
 
 function Footer() {
 	const {t} = useTranslation("common")
-	const [submitted, setSubmit] = useState(false)
+	// const [ mailBox, setMailBox ] = useState("")
+	const [ submitted, setSubmit ] = useState(false)
+
+	function handleSubmit(e) {
+		e.preventDefault()
+		setSubmit(true)
+		console.log(e.target[0].value)
+	}
 
 	return (
 		<Container fluid as="footer" className="bg-lightgrey px-0">
@@ -33,20 +40,24 @@ function Footer() {
 				</label>
 				{ submitted 
 				? <p className="text-secondary text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
-				:	<InputGroup className="d-flex justify-content-center mb-4">
-						<FormControl
-							id="subscribe"
-							type="email"
-							placeholder={t('footer.placeholder')}
-							aria-label="subscribe"
-							style={{maxWidth: "20rem", boxShadow: "none"}}
-						/>
-						<InputGroup.Append>
-							<Button variant="outline-secondary" type="submit" className="subscribe-btn" onClick={() => setSubmit(true)}>
-								<SubscribeIcon />
-							</Button>
-						</InputGroup.Append>
-					</InputGroup>
+				:	<Form onSubmit={(e) => handleSubmit(e)}>
+						<InputGroup className="d-flex justify-content-center mb-4">
+							<Form.Control 
+								// onChange={(e) => setMailBox(e.target.value)}
+								type="email"
+								placeholder={t('footer.placeholder')}
+								aria-label="subscribe-list"
+								aria-describedby="subscribe"
+								style={{maxWidth: "20rem", boxShadow: "none"}}
+								required
+							/>
+							<InputGroup.Append>
+								<Button variant="outline-secondary" type="submit" className="subscribe-btn">
+									<SubscribeIcon />
+								</Button>
+							</InputGroup.Append>
+						</InputGroup>
+					</Form>
 				}
 				<hr className="m-0" />
 			</Container>
