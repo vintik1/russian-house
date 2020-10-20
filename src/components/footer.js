@@ -40,15 +40,14 @@ function Footer() {
 				</label>
 				{ submitted 
 				? <p className="text-secondary text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
-				:	<Form onSubmit={(e) => handleSubmit(e)}>
-						<InputGroup className="d-flex justify-content-center mb-4">
+				:	<Form onSubmit={(e) => handleSubmit(e)} className="mx-auto">
+						<InputGroup className="mb-4">
 							<Form.Control 
-								// onChange={(e) => setMailBox(e.target.value)}
 								type="email"
 								placeholder={t('footer.placeholder')}
 								aria-label="subscribe-list"
 								aria-describedby="subscribe"
-								style={{maxWidth: "20rem", boxShadow: "none"}}
+								style={{maxWidth: "25rem", minWidth: "18rem"}}
 								required
 							/>
 							<InputGroup.Append>
