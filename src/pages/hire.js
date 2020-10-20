@@ -1,10 +1,10 @@
-import React from 'react'
-import Img from 'gatsby-image'
 /**
  * hire.js
  * Created by Egor Sadanov (@sadanov)
  * This component represents hire page.
  */
+import React from 'react'
+import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby' 
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
@@ -25,6 +25,11 @@ import 'react-day-picker/lib/style.css'
 const Hire = () => {
 	const {t} = useTranslation('hire')
 	const data = useStaticQuery(query)
+
+	function handleSubmit(e) {
+		e.preventDefault()
+		console.log(e.target[2].value)
+	}
 
 	const past = {
     before: new Date(2020, 11, 1)
@@ -119,8 +124,8 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form>
-					<Form.Group controlId="input1">
+				<Form onSubmit={(e) => handleSubmit(e)}>
+					<Form.Group controlId="input1" required>
 						<Form.Label>{t('form.name')}</Form.Label>
 						<Form.Control type="text"></Form.Control>
 					</Form.Group>
