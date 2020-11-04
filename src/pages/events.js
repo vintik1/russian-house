@@ -6,6 +6,9 @@
 import React, { useState } from 'react'
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
+import Img from 'gatsby-image'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Nav from 'react-bootstrap/Nav'
 import NavItem from 'react-bootstrap/Nav'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -25,7 +28,7 @@ const Events = () => {
 	return (
 		<Container>
 			<h1 className="my-5">{t('header')}</h1>
-			<Nav className="flex-column flex-lg-row">
+			<Nav className="flex-column flex-md-row">
 				<Dropdown as={NavItem} className="mr-4 mb-3">
 					<Dropdown.Toggle as={CustomToggle} id="events-type">
 						{eventTitle}
@@ -69,6 +72,7 @@ const Events = () => {
 				</Nav.Item>
 			</Nav>
 			<hr className="my-0" />
+			{/* <EventCard /> */}
 			<Container fluid className="text-center" style={{marginTop: "5rem", marginBottom: "5rem"}}>
 				<h2>{t('fail')}</h2>
 			</Container>
@@ -92,3 +96,35 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <ArrowDownIcon className="ml-2"/>
   </a>
 ))
+
+const EventCard = () => {
+	const {t} = useTranslation('eventCards')
+	return (
+		<Row xs={1} md={3}>
+			<Col xs={10}>
+				{t('title')}
+			</Col>
+			<Col xs={5}>
+			</Col>
+			<Col xs={7}>
+			</Col>
+		</Row>
+	)
+}
+
+const queryGetEvents = graphql`
+query getEvents {
+  allEventCardsJson {
+    edges {
+      node {
+        event_id
+        img
+        title
+        auditory
+        description
+        date
+      }
+    }
+  }
+}
+`

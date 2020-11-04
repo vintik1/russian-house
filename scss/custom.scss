@@ -27,9 +27,11 @@
 .subscribe-btn {
 	width: 4rem;
 	border-color: #bebdbf !important;
+	box-shadow: none !important;
 }
 .subscribe-btn:hover {
-	background-color: #bebdbf !important;
+	background-color: #6c757d !important;
+	border-color: #6c757d !important;
 }
 .subscribe-btn:focus {
 	border-color: #6c757d !important;

@@ -1,0 +1,18 @@
+[
+	{
+		"event-id": "event_1",
+		"img": "afisha_1.jpg",
+		"auditory": "youth",
+		"title": "Party in the backyard",
+		"date": "2019-12-28T19:00:00",
+		"description": "Taht was nioce"
+	},
+	{
+		"event-id": "event_2",
+		"img": "afisha_2.jpg",
+		"auditory": "youth",
+		"title": "End of summer party",
+		"date": "2020-04-08T19:00:00",
+		"description": "That was noice"
+	}
+]

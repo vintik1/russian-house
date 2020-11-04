@@ -38,6 +38,18 @@ const Hire = () => {
 	return (
 		<Container className="my-5">
 			<h1 className="my-5">{t('header')}</h1>
+			<div className="mb-4">
+				<Row>
+					<Col lg={8}>
+						<p>Данное здание построено в бум ренессансного стиля, оно входит в список наследия архитектурной 
+							достопримечательности, его местонахождение находиться в самом творческом районе Фицрой, 
+							между Smith and Johnson street, вблизи от нескольких остановок общественного транспорта.</p>
+						<p>Помимо двух залов, при договоренности можно организовать сервис услуги кейтеринга для мероприятий различных масштабов.
+							А также арендовать дополнительное музыкального оборудование.</p>
+						<p>Оформление заявки можно сделать внизу.</p>
+					</Col>
+				</Row>
+			</div>
 			<Accordion>
 				<Container fluid className="border" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
@@ -64,20 +76,22 @@ const Hire = () => {
 								<p className="mb-0">{t('calendar')}</p>
 								<DayPicker fromMonth={new Date()} disabledDays={past} />
 							</Col>
-							<Col className="d-flex flex-column text-center justify-content-center py-2 order-1">
-								<p className="mx-5">Much evil soon high in hope do view. Out may few northward believing attempted.<br />
-									Yet timed being songs marry one defer men our. Although finished blessing do of. <br />
-									Consider speaking me prospect whatever if. Ten nearer rather hunted six parish indeed number. <br />
-									Allowance repulsive sex may contained can set suspected abilities cordially. Do part am he high rest that. <br />
-									So fruit to ready it being views match. 
-								</p>
+							<Col className="d-flex flex-column justify-content-center order-1">
+								<ul>
+									<li>Семинары (Workshop)</li>
+									<li>Совместные групповые занятия (Group sessions)</li>
+									<li>Музыкальная апаратура. Amplifier, Speakers, Microfon </li>
+									<li>Кухня (Kitchen) ($) extra fees apply</li>
+									<li>Балетный станок (Ballet barre)</li>
+									<li>Рояль (Royal piano) ($) extra fees apply</li>
+								</ul>
 							</Col>
 						</Row>
 					</Accordion.Collapse>
 				</Container>
 				<Container fluid className="border" style={{marginBottom: "4rem"}}>
 					<Row xs={1} lg={2}>
-						<Col as={Carousel} indicators={false} className="p-0 order-lg-1">
+						<Col as={Carousel} indicators={false} className="p-0 order-lg-2">
 							<Carousel.Item>
 								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
 							</Carousel.Item>
@@ -85,7 +99,7 @@ const Hire = () => {
 								<Img fluid={data.file.childImageSharp.fluid} className="h-100" alt="Figure 1"/>
 							</Carousel.Item>
 						</Col>
-						<Col className="d-flex flex-column text-center justify-content-center order-lg-2 p-5">
+						<Col className="d-flex flex-column text-center justify-content-center order-lg-1 p-5">
 							<h4 className="text-uppercase">{t('amber.head')}</h4>
 							<p>На втором этаже расположена - “Янтарная комната” помещение сдается под 
 								проведение менее крупных мероприятий, его вместительность максимум 80 человек</p>
@@ -96,17 +110,18 @@ const Hire = () => {
 					</Row>
 					<Accordion.Collapse eventKey="1">
 						<Row xs={1} lg={2}>
-							<Col className="d-flex flex-column text-center justify-content-center py-2 order-1">
+							<Col className="d-flex flex-column text-center justify-content-center py-2 order-2 order-lg-1">
 								<p className="mb-0">{t('calendar')}</p>
 								<DayPicker fromMonth={new Date()} disabledDays={past} />
 							</Col>
-							<Col className="d-flex flex-column text-center justify-content-center py-2 order-2">
-								<p className="mx-5">Much evil soon high in hope do view. Out may few northward believing attempted.<br />
-									Yet timed being songs marry one defer men our. Although finished blessing do of. <br />
-									Consider speaking me prospect whatever if. Ten nearer rather hunted six parish indeed number. <br />
-									Allowance repulsive sex may contained can set suspected abilities cordially. Do part am he high rest that. <br />
-									So fruit to ready it being views match. 
-								</p>
+							<Col className="d-flex flex-column justify-content-center order-1 order-lg-2">
+								<ul>
+									<li>Семинары (Workshop)</li>
+									<li>Совместные групповые занятия (Group sessions)</li>
+									<li>Зона отдыха (Chill zone)</li>
+									<li>Мини буфет (Mini buffet)</li>
+									<li>Бильярд (Pool)</li>
+								</ul>
 							</Col>
 						</Row>
 					</Accordion.Collapse>
@@ -124,7 +139,7 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form onSubmit={(e) => handleSubmit(e)}>
+				<Form onSubmit={(e) => handleSubmit(e)} name="hirecontact" method="POST" data-netlify="true">
 					<Form.Group controlId="input1" required>
 						<Form.Label>{t('form.name')}</Form.Label>
 						<Form.Control type="text"></Form.Control>

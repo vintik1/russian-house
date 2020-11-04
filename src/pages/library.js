@@ -4,7 +4,7 @@
  * This functional component represents library page.
  */
 import React, {useState} from 'react';
-import books from "../data/db.json";
+import books from "../data/library-books.json";
 
 function Library() {
 	// number represents current amount of shown books
