@@ -7,7 +7,7 @@ The core of this SPA is Gatsby's default starter with integration of the followi
 - Netlify CMS for editing content of the website
 - Bootstrap as the main toolkit
 
-The website is hosted and deployed on AWS Amplify Console.
+The website is hosted and deployed on Netlify.
 
 You can view the prototype by following [the link](https://master.d2ew76d4b2igww.amplifyapp.com/)
 
