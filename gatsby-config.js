@@ -35,13 +35,6 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-s3`,
-    //   options: {
-    //     bucketName: `russian-house-bucket`,
-    //     protocol: `https`
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-layout`,
       options: {

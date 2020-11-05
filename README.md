@@ -9,7 +9,7 @@ The core of this SPA is Gatsby's default starter with integration of the followi
 
 The website is hosted and deployed on AWS Amplify Console.
 
-You can view the prototype by following [the link](https://master.d2ew76d4b2igww.amplifyapp.com/)
+You can view the prototype by following [the link](https://modest-aryabhata-2283db.netlify.app/)
 
 **Frontend Design Task List**
 - [ ] resolve custom font appearence on build version
