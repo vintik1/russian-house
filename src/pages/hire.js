@@ -3,7 +3,7 @@
  * Created by Egor Sadanov (@sadanov)
  * This component represents hire page.
  */
-import React from 'react'
+import React, { useState } from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby' 
 import { useTranslation } from "gatsby-plugin-react-i18next"
@@ -25,15 +25,35 @@ import 'react-day-picker/lib/style.css'
 const Hire = () => {
 	const {t} = useTranslation('hire')
 	const data = useStaticQuery(query)
+	const past = { before: new Date(2020, 11, 1) }
 
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		numOfGuests: "",
+		eventType: "",
+		date: ""
+	})
+	
+	const changeHandler = e => {
+		setFormData({...formData, [e.target.name]: e.target.value})
+	}
+	
 	function handleSubmit(e) {
 		e.preventDefault()
-		console.log(e.target[2].value)
-	}
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: encodeURIComponent(JSON.stringify({ "form-name": "hirecontact", ...formData }))
+		})
+			.then(() => console.log("Success!"))
+			.catch(error => alert(error))
 
-	const past = {
-    before: new Date(2020, 11, 1)
-  }
+		// const json = await response.json()
+		// console.log(json.data)
+		console.log(formData)
+	}
 
 	return (
 		<Container className="my-5">
@@ -139,26 +159,27 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form onSubmit={(e) => handleSubmit(e)} name="hirecontact" method="POST" data-netlify="true">
+				<Form onSubmit={(e) => handleSubmit(e)} netlify-honeypot="bot-field">
+					<input type="hidden" name="form-name" value="hirecontact" />
 					<Form.Group controlId="input1" required>
 						<Form.Label>{t('form.name')}</Form.Label>
-						<Form.Control type="text"></Form.Control>
+						<Form.Control type="text" name="name" value={formData.name} onChange={changeHandler}></Form.Control>
 					</Form.Group>
 					<Form.Group controlId="input2">
 						<Form.Label>{t('form.email')}</Form.Label>
-						<Form.Control type="email"></Form.Control>
+						<Form.Control type="email" name="email" value={formData.email} onChange={changeHandler}></Form.Control>
 					</Form.Group>
 					<Form.Group controlId="input3">
 						<Form.Label>{t('form.phone')}</Form.Label>
-						<Form.Control type="text"></Form.Control>
+						<Form.Control type="text" name="phone" value={formData.phone} onChange={changeHandler}></Form.Control>
 					</Form.Group>
 					<Form.Group controlId="input4">
 						<Form.Label>{t('form.guests')}</Form.Label>
-						<Form.Control type="number"></Form.Control>
+						<Form.Control type="number" name="numOfGuests" value={formData.numOfGuests} onChange={changeHandler}></Form.Control>
 					</Form.Group>
 					<Form.Group controlId="input5">
 						<Form.Label>{t('form.type')}</Form.Label>
-						<Form.Control type="text"></Form.Control>
+						<Form.Control type="text" name="eventType" value={formData.eventType} onChange={changeHandler}></Form.Control>
 					</Form.Group>
 					<Form.Group className="d-flex justify-content-between" controlId="input6">
 						<Form.Label>{t('form.date')}</Form.Label>
@@ -168,6 +189,7 @@ const Hire = () => {
 									<label htmlFor="day-picker" className="m-0" style={{position: "relative", top: "-2px"}}><CalendarIcon /></label>
 									<input {...props} 
 										type="button" 
+										name="date"
 										id="day-picker" 
 										style={{
 											textAlign: "start",
@@ -178,8 +200,9 @@ const Hire = () => {
 									/>
 								</div>
 							} 
-							value="Pick Date" 
+							value={formData.date} onChange={changeHandler} 
 						/>
+						<div data-netlify-recaptcha="true"></div>
 					</Form.Group>
 					<div className="text-center pt-3">
 						<Button variant="outline-dark" type="submit" className="w-50">
