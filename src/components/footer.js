@@ -47,7 +47,7 @@ function Footer() {
 								placeholder={t('footer.placeholder')}
 								aria-label="subscribe-list"
 								aria-describedby="subscribe"
-								style={{maxWidth: "25rem", minWidth: "16rem"}}
+								style={{maxWidth: "25rem", minWidth: "18rem"}}
 								required
 							/>
 							<InputGroup.Append>

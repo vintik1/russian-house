@@ -20,40 +20,38 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 import ChevronDownIcon from "../images/svg/chevron-down.svg"
 import CalendarIcon from "../images/svg/calendar.svg"
 
+import 'react-day-picker/lib/style.css'
 
 const Hire = () => {
 	const {t} = useTranslation('hire')
 	const data = useStaticQuery(query)
 	const past = { before: new Date(2020, 11, 1) }
 
-	const [submitted, setSubmit] = useState(false)
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
 		phone: "",
 		numOfGuests: "",
 		eventType: "",
-		selectedDay: undefined
+		date: ""
 	})
 	
 	const changeHandler = e => {
 		setFormData({...formData, [e.target.name]: e.target.value})
 	}
-
-	const handleDayChange = (selectedDay) => {
-		setFormData({...formData, selectedDay})
-  }
 	
 	function handleSubmit(e) {
 		e.preventDefault()
-		setSubmit(true)
 		fetch("/", {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: encodeURIComponent(JSON.stringify({ "form-name": "hirecontact", ...formData }))
 		})
-			.catch(error => console.log(error))
+			.then(() => console.log("Success!"))
+			.catch(error => alert(error))
 
+		// const json = await response.json()
+		// console.log(json.data)
 		console.log(formData)
 	}
 
@@ -163,55 +161,54 @@ const Hire = () => {
 				</Container>
 				<Form onSubmit={(e) => handleSubmit(e)} netlify-honeypot="bot-field">
 					<input type="hidden" name="form-name" value="hirecontact" />
-					<Form.Group controlId="inputName">
+					<Form.Group controlId="input1" required>
 						<Form.Label>{t('form.name')}</Form.Label>
-						<Form.Control type="text" name="name" value={formData.name} onChange={changeHandler} required></Form.Control>
+						<Form.Control type="text" name="name" value={formData.name} onChange={changeHandler}></Form.Control>
 					</Form.Group>
-					<Form.Group controlId="inputMail">
+					<Form.Group controlId="input2">
 						<Form.Label>{t('form.email')}</Form.Label>
-						<Form.Control type="email" name="email" value={formData.email} onChange={changeHandler} required></Form.Control>
+						<Form.Control type="email" name="email" value={formData.email} onChange={changeHandler}></Form.Control>
 					</Form.Group>
-					<Form.Group controlId="inputPhone">
+					<Form.Group controlId="input3">
 						<Form.Label>{t('form.phone')}</Form.Label>
-						<Form.Control type="text" name="phone" value={formData.phone} onChange={changeHandler} required></Form.Control>
+						<Form.Control type="text" name="phone" value={formData.phone} onChange={changeHandler}></Form.Control>
 					</Form.Group>
-					{/* <Form.Group controlId="input4">
+					<Form.Group controlId="input4">
 						<Form.Label>{t('form.guests')}</Form.Label>
 						<Form.Control type="number" name="numOfGuests" value={formData.numOfGuests} onChange={changeHandler}></Form.Control>
-					</Form.Group> */}
-					<Form.Group controlId="inputGuests">
-						<Form.Label>{t('form.guests')}</Form.Label>
-						<Form.Control as="select" name="numOfGuests" value={formData.numOfGuests} onChange={changeHandler}>
-							<option>1–10</option>
-							<option>10–25</option>
-							<option>25–50</option>
-							<option>50–100</option>
-						</Form.Control>
 					</Form.Group>
-					<Form.Group controlId="inputEventType">
+					<Form.Group controlId="input5">
 						<Form.Label>{t('form.type')}</Form.Label>
 						<Form.Control type="text" name="eventType" value={formData.eventType} onChange={changeHandler}></Form.Control>
 					</Form.Group>
-					<DayPickerInput 
-						inputProps={{required: true, id: "day"}}
-						value={formData.selectedDay} 
-						onDayChange={handleDayChange} 
-						placeholder={t('form.selectDay')}
-						component={ props => 
-							<>
-								<label htmlFor="day" className="m-0" style={{position: "relative", top: "-2px"}}><CalendarIcon /></label>
-								<input {...props} className="day-selector" name="day" id="day" />
-							</>
-						} 
-					/>
-					{ submitted 
-					? <p className="text-center mt-3 mb-0">Thank you. We have saved your information and promice to get back as soon as possible.</p> 
-					:	<div className="text-center mt-3">
-							<Button variant="outline-dark" type="submit" className="w-50">
-								{t('form.submit')}
-							</Button>
-						</div>
-					}
+					<Form.Group className="d-flex justify-content-between" controlId="input6">
+						<Form.Label>{t('form.date')}</Form.Label>
+						<DayPickerInput 
+							component={ props => 
+								<div>
+									<label htmlFor="day-picker" className="m-0" style={{position: "relative", top: "-2px"}}><CalendarIcon /></label>
+									<input {...props} 
+										type="button" 
+										name="date"
+										id="day-picker" 
+										style={{
+											textAlign: "start",
+											border: "none", 
+											backgroundColor: "#fff", 
+											width: "8rem"
+										}}
+									/>
+								</div>
+							} 
+							value={formData.date} onChange={changeHandler} 
+						/>
+						<div data-netlify-recaptcha="true"></div>
+					</Form.Group>
+					<div className="text-center pt-3">
+						<Button variant="outline-dark" type="submit" className="w-50">
+							{t('form.submit')}
+						</Button>
+					</div>
 				</Form>
 			</Container>
 		</Container>

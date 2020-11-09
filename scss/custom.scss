@@ -25,7 +25,6 @@
 }
 
 .subscribe-btn {
-	z-index: inherit !important;
 	width: 4rem;
 	border-color: #bebdbf !important;
 	box-shadow: none !important;
@@ -135,24 +134,4 @@
 }
 .card-hover:hover > .card-img-top {
 	filter: brightness(65%) !important;
-}
-
-.DayPicker-Day--today {
-  color: #3937d3 !important;
-  font-weight: 700;
-}
-
-.day-selector {
-	text-align: start;
-	border: none;
-	background-color: #fff;
-	width: 8rem;
-}
-
-.day-selector::placeholder {
-	color: #000;
-}
-
-.DayPicker {
-	line-height: 1.2rem;
 }
