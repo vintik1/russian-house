@@ -35,12 +35,12 @@ const Cards = () => {
           if (index < number) {
             return (
               <Col className="px-2" key={crd.id}>
-                <Card className="p-3 mb-3" style={{borderRadius: "0"}}>
+                <Card className="p-3 mb-3 card-buttontext" style={{borderRadius: "0"}}>
 									<Img fluid={data.japcar.childImageSharp.fluid} className="card-img-top" />
                   <Card.Body>
-                    <Card.Title><h5>{t(crd.id + '.title')}</h5></Card.Title>
+                    <Card.Title className="mb-0"><h5 className="mb-0">{t(crd.id + '.title')}</h5></Card.Title>
                     <Card.Text>{t(crd.id + '.text')}</Card.Text>
-										<Link to="/" className="btn btn-primary stretched-link">
+										<Link to="/" className="btn btn-primary stretched-link card-button">
 											{t(crd.id + '.btn-text')}
 										</Link>
                   </Card.Body>
