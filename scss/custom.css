@@ -1,0 +1,166 @@
+@font-face {
+  font-family: RoslynGothic;
+  src: url("../src/fonts/RoslynGothic.ttf") format("ttf");
+}
+
+.roslyn-font {
+  font-family: RoslynGothic;
+}
+
+.custom-brand {
+  color: #000;
+}
+
+.custom-brand:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar-toggler:hover, .navbar-toggler:focus {
+  outline-color: white;
+  outline: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.subscribe-btn {
+  z-index: inherit !important;
+  width: 4rem;
+  border-color: #bebdbf !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.subscribe-btn:hover {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
+
+.subscribe-btn:focus {
+  border-color: #6c757d !important;
+}
+
+.card-button {
+  border-radius: 5px !important;
+  background-color: #000 !important;
+  border-width: 0px !important;
+  color: #D3D3D3	!important;
+}
+
+.card-buttontext {
+  color: #000	!important;
+  text-align: center !important;
+  margin: 2;
+}
+
+.chevron-down {
+  width: 4rem !important;
+  color: #6c757d !important;
+  margin: 0 auto;
+  padding: 0 !important;
+  -webkit-transition: -webkit-transform 0.4s ease !important;
+  transition: -webkit-transform 0.4s ease !important;
+  transition: transform 0.4s ease !important;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease !important;
+}
+
+.chevron-down:hover {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.chevron-down:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.custom-drop {
+  text-decoration: none !important;
+  color: #000;
+}
+
+.custom-drop:hover {
+  color: #6c757d;
+}
+
+.custom-link {
+  color: #6c757d;
+}
+
+.custom-link:hover {
+  color: #bebdbf;
+  text-decoration: none;
+}
+
+.card-link {
+  color: #756b49;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.lang-toggle {
+  text-transform: uppercase;
+  font-size: 1rem !important;
+}
+
+.lang-toggle:hover {
+  color: #bebdbf !important;
+}
+
+.custom-menu-link {
+  color: black;
+  font-weight: bolder;
+}
+
+.custom-menu-link:hover {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.card-hover {
+  border-width: 0px !important;
+}
+
+.card-hover:hover > .card-img-top {
+  -webkit-filter: brightness(65%) !important;
+          filter: brightness(65%) !important;
+}
+
+.DayPicker-Day--today {
+  color: #3937d3 !important;
+  font-weight: 700;
+}
+
+.day-selector {
+  text-align: start;
+  border: none;
+  background-color: #fff;
+  width: 8rem;
+}
+
+.day-selector::-webkit-input-placeholder {
+  color: #000;
+}
+
+.day-selector:-ms-input-placeholder {
+  color: #000;
+}
+
+.day-selector::-ms-input-placeholder {
+  color: #000;
+}
+
+.day-selector::placeholder {
+  color: #000;
+}
+
+.DayPicker {
+  line-height: 1.2rem;
+}
+/*# sourceMappingURL=custom.css.map */
