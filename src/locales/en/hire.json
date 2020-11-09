@@ -17,6 +17,7 @@
 		"guests": "Number of guests",
 		"type": "Type of event",
 		"date": "Preffered Date",
+		"selectDay": "Pick a day",
 		"submit": "Submit"
 	}
 }

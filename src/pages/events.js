@@ -84,7 +84,7 @@ export default Events
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <a
-		href=""
+		href="/"
 		className="custom-drop"
     ref={ref}
     onClick={(e) => {
