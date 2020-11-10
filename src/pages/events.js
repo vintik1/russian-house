@@ -24,6 +24,12 @@ const Events = () => {
 	const {t} = useTranslation('events')
 	const [eventTitle, setEventTitle] = useState(t('events.all'))
 	const [auditory, setAuditory] = useState(t('auditory.any'))
+	const [day, setDay] = useState(undefined)
+
+	function formatDate(date, format) {
+		return  date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
+
+	}
 
 	return (
 		<Container>
@@ -52,22 +58,17 @@ const Events = () => {
 				</Dropdown>
 				<Nav.Item className="mb-3">
 					<DayPickerInput 
+						value={day} 
+						format="YYYY"
+						formatDate={formatDate}
+						onDayChange={setDay} 
+						placeholder={t('date')}
 						component={ props => 
 							<div>
-								<label htmlFor="day-picker" className="m-0" style={{position: "relative", top: "-2px"}}><CalendarIcon /></label>
-								<input {...props} 
-									type="button" 
-									id="day-picker" 
-									style={{
-										textAlign: "start",
-										border: "none", 
-										backgroundColor: "#fff", 
-										width: "8rem"
-									}}
-								/>
+								<label htmlFor="day" className="m-0" style={{position: "relative", top: "-2px"}}><CalendarIcon /></label>
+								<input {...props} className="day-selector" name="day" id="day" />
 							</div>
 						} 
-						value={t('date')} 
 					/>
 				</Nav.Item>
 			</Nav>

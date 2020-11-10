@@ -31,17 +31,22 @@ const Hire = () => {
 		name: "",
 		email: "",
 		phone: "",
+		room: "",
 		numOfGuests: "",
 		eventType: "",
 		selectedDay: undefined
 	})
 	
+	function formatDate(date) {
+		return  date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
+	}
+
 	const changeHandler = e => {
 		setFormData({...formData, [e.target.name]: e.target.value})
 	}
 
 	const handleDayChange = (selectedDay) => {
-		setFormData({...formData, selectedDay})
+		setFormData({...formData, selectedDay: formatDate(selectedDay)})
   }
 	
 	function handleSubmit(e) {
@@ -153,15 +158,13 @@ const Hire = () => {
 				<Container className="d-flex flex-column text-center">
 					<h3>{t('form.contact-us')}</h3>
 					<p>{t('form.p1')}
-						{/* For all Private Function Enquiries please contact the<br />
-						Russian House	Associates team on */}
 					</p>
 					<p>+61 (0)3 2826 1547<br />
 						eventmaker@russianhouse.com.au
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form onSubmit={(e) => handleSubmit(e)} netlify-honeypot="bot-field">
+				<Form onSubmit={(e) => handleSubmit(e)} data-netlify="true" netlify-honeypot="bot-field">
 					<input type="hidden" name="form-name" value="hirecontact" />
 					<Form.Group controlId="inputName">
 						<Form.Label>{t('form.name')}</Form.Label>
@@ -175,10 +178,13 @@ const Hire = () => {
 						<Form.Label>{t('form.phone')}</Form.Label>
 						<Form.Control type="text" name="phone" value={formData.phone} onChange={changeHandler} required></Form.Control>
 					</Form.Group>
-					{/* <Form.Group controlId="input4">
-						<Form.Label>{t('form.guests')}</Form.Label>
-						<Form.Control type="number" name="numOfGuests" value={formData.numOfGuests} onChange={changeHandler}></Form.Control>
-					</Form.Group> */}
+					<Form.Group controlId="inputRoom">
+						<Form.Label>{t('form.room')}</Form.Label>
+						<Form.Control as="select" name="room" value={formData.room} onChange={changeHandler}>
+							<option>{t('crystal.head')}</option>
+							<option>{t('amber.head')}</option>
+						</Form.Control>
+					</Form.Group>
 					<Form.Group controlId="inputGuests">
 						<Form.Label>{t('form.guests')}</Form.Label>
 						<Form.Control as="select" name="numOfGuests" value={formData.numOfGuests} onChange={changeHandler}>
@@ -193,6 +199,7 @@ const Hire = () => {
 						<Form.Control type="text" name="eventType" value={formData.eventType} onChange={changeHandler}></Form.Control>
 					</Form.Group>
 					<DayPickerInput 
+						formatDate={formatDate}
 						inputProps={{required: true, id: "day"}}
 						value={formData.selectedDay} 
 						onDayChange={handleDayChange} 
@@ -229,5 +236,5 @@ const query = graphql`
         }
 			}
 		}
-  }
+	}
 `

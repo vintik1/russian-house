@@ -137,9 +137,14 @@
 	filter: brightness(65%) !important;
 }
 
+
+// react day picker styles
+.DayPicker {
+	line-height: 1.2rem !important;
+}
+
 .DayPicker-Day--today {
   color: #3937d3 !important;
-  font-weight: 700;
 }
 
 .day-selector {
@@ -153,6 +158,3 @@
 	color: #000;
 }
 
-.DayPicker {
-	line-height: 1.2rem;
-}
