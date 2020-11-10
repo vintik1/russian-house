@@ -46,7 +46,7 @@ const Hire = () => {
 	}
 
 	const handleDayChange = (selectedDay) => {
-		setFormData({...formData, selectedDay})
+		setFormData({...formData, selectedDay: formatDate(selectedDay)})
   }
 	
 	function handleSubmit(e) {
@@ -164,7 +164,7 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form onSubmit={(e) => handleSubmit(e)} netlify netlify-honeypot="bot-field">
+				<Form onSubmit={(e) => handleSubmit(e)} data-netlify="true" netlify-honeypot="bot-field">
 					<input type="hidden" name="form-name" value="hirecontact" />
 					<Form.Group controlId="inputName">
 						<Form.Label>{t('form.name')}</Form.Label>
