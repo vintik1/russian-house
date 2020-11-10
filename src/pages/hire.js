@@ -159,7 +159,7 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form onSubmit={(e) => handleSubmit(e)} netlify-honeypot="bot-field">
+				<Form onSubmit={(e) => handleSubmit(e)} netlify netlify-honeypot="bot-field">
 					<input type="hidden" name="form-name" value="hirecontact" />
 					<Form.Group controlId="input1" required>
 						<Form.Label>{t('form.name')}</Form.Label>
