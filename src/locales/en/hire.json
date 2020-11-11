@@ -16,6 +16,7 @@
 		"phone": "Phone",
 		"room": "Room",
 		"guests": "Number of guests",
+		"select": "Select your option",
 		"type": "Type of event",
 		"date": "Preffered Date",
 		"selectDay": "Pick a day",

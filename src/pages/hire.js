@@ -53,12 +53,12 @@ const Hire = () => {
 	function handleSubmit(e) {
 		e.preventDefault()
 		setSubmit(true)
-		fetch("/", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encodeURIComponent(JSON.stringify({ "form-name": "hirecontact", ...formData }))
-		})
-			.catch(error => console.log(error))
+		// fetch("/", {
+		// 	method: "POST",
+		// 	headers: { "Content-Type": "application/x-www-form-urlencoded" },
+		// 	body: encodeURIComponent(JSON.stringify({ "form-name": "hirecontact", ...formData }))
+		// })
+		// 	.catch(error => console.log(error))
 
 		console.log(formData)
 	}
@@ -165,7 +165,7 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form onSubmit={(e) => handleSubmit(e)} data-netlify="true" netlify-honeypot="bot-field">
+				<Form name="hirecontact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)} >
 					<input type="hidden" name="form-name" value="hirecontact" />
 					<Form.Group controlId="inputName">
 						<Form.Label>{t('form.name')}</Form.Label>
@@ -182,13 +182,15 @@ const Hire = () => {
 					<Form.Group controlId="inputRoom">
 						<Form.Label>{t('form.room')}</Form.Label>
 						<Form.Control as="select" name="room" value={formData.room} onChange={changeHandler}>
-							<option>{t('crystal.head')}</option>
+							<option value="" disabled selected>{t('form.select')}</option>
+							<option selected>{t('crystal.head')}</option>
 							<option>{t('amber.head')}</option>
 						</Form.Control>
 					</Form.Group>
 					<Form.Group controlId="inputGuests">
 						<Form.Label>{t('form.guests')}</Form.Label>
 						<Form.Control as="select" name="numOfGuests" value={formData.numOfGuests} onChange={changeHandler}>
+							<option value="" disabled selected>{t('form.select')}</option>
 							<option>1–10</option>
 							<option>10–25</option>
 							<option>25–50</option>
