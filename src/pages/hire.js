@@ -20,6 +20,7 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 import ChevronDownIcon from "../images/svg/chevron-down.svg"
 import CalendarIcon from "../images/svg/calendar.svg"
 
+import '../styles/daypicker.css'
 
 const Hire = () => {
 	const {t} = useTranslation('hire')

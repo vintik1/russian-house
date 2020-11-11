@@ -17,8 +17,8 @@ import DayPickerInput from 'react-day-picker/DayPickerInput'
 
 import ArrowDownIcon from "../images/svg/arrow-down.svg"
 import CalendarIcon from "../images/svg/calendar.svg"
-import 'react-day-picker/lib/style.css'
 
+import '../styles/daypicker.css'
 
 const Events = () => {
 	const {t} = useTranslation('events')
