@@ -32,6 +32,11 @@ function Footer() {
 		console.log(e.target[0].value)
 	}
 
+	const getCurrentYear = () => {
+		var dt = new Date();
+		return dt.getFullYear();
+	}
+
 	return (
 		<Container fluid as="footer" className="bg-lightgrey px-0">
 			<Container className="d-flex flex-column pt-4">
@@ -114,7 +119,7 @@ function Footer() {
 				<hr />
 			</Container>
 			<Container className="d-flex flex-row justify-content-between text-muted">
-				<p className="small" style={{cursor: "default"}}>{t('footer.trademark')}</p>
+				<p className="small" style={{cursor: "default"}}>© {getCurrentYear()} {t('footer.trademark')}</p>
 				<p className="small cursor-pointer">
 					Made by <a href="https://github.com/egor-sadanov" className="custom-link" target="_blank" rel="noopener noreferrer">@sadanov</a>
 				</p>
