@@ -45,7 +45,7 @@ function Footer() {
 				</label>
 				{ submitted 
 				? <p className="text-secondary text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
-				:	<Form onSubmit={(e) => handleSubmit(e)} className="mx-auto">
+				:	<Form name="subscribe" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)} className="mx-auto">
 						<InputGroup className="mb-4">
 							<Form.Control 
 								type="email"
