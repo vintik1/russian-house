@@ -2,6 +2,7 @@
 # unless otherwise overridden by more specific contexts.
 [build]
   publish = "public/"
+  functions = "lambda_functions"
 
   # Default build command.
   command = "gatsby develop"
