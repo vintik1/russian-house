@@ -15,6 +15,7 @@ const connectToDatabase = async (uri) => {
   if (cachedDb) return cachedDb
 
   const client = await MongoClient.connect(uri, {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
   })
 
