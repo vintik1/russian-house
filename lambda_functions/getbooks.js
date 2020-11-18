@@ -36,12 +36,7 @@ const queryDatabase = async (db) => {
 }
 
 module.exports.handler = async (event, context) => {
-  // const unixTime = Math.floor(Date.now() / 1000)
   context.callbackWaitsForEmptyEventLoop = false
   const db = await connectToDatabase(MONGODB_URI)
   return queryDatabase(db)
-  // return {
-  //   statusCode: 200,
-  //   body: `The Unix time is ${unixTime}`,
-  // }
 }
