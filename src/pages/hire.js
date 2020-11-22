@@ -37,12 +37,6 @@ const Hire = () => {
 		eventType: "",
 		selectedDay: undefined
 	})
-
-	function encode(data) {
-		return Object.keys(data)
-			.map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-			.join('&')
-	}
 	
 	function formatDate(date) {
 		return  date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
@@ -58,18 +52,14 @@ const Hire = () => {
 	
 	function handleSubmit(e) {
 		e.preventDefault()
-		setSubmit(true)
 		const form = e.target
-		fetch("/", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: encode({ "form-name": form.getAttribute('name'), 
-			...formData 
-			})
-		})
-			.catch(error => console.log(error))
 
-		console.log(formData)
+		import("../methods/formSubmit.js")
+		.then(fs => {
+			fs.submitForm(form.getAttribute("name"), formData)
+		})
+		.then( () => setSubmit(true) )
+		.catch(err => console.log("err: ", err.message))
 	}
 
 	return (
@@ -174,7 +164,7 @@ const Hire = () => {
 					</p>
 					<p>{t('form.p2')}</p>
 				</Container>
-				<Form name="hirecontact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)} >
+				<Form name="hirecontact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)}>
 					<input type="hidden" name="form-name" value="hirecontact" />
 					<Form.Group controlId="inputName">
 						<Form.Label>{t('form.name')}</Form.Label>

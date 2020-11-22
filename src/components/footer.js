@@ -23,13 +23,19 @@ import SubscribeIcon from "../images/svg/send.svg"
 
 function Footer() {
 	const {t} = useTranslation("common")
-	// const [ mailBox, setMailBox ] = useState("")
 	const [ submitted, setSubmit ] = useState(false)
+	const [ email, setEmail ] = useState("")
 
-	function handleSubmit(e) {
-		e.preventDefault()
-		setSubmit(true)
-		console.log(e.target[0].value)
+	function handleSubmit(evt) {
+		evt.preventDefault()
+		const form = evt.target
+
+		import("../methods/formSubmit.js")
+		.then(fs => {
+			fs.submitForm(form.getAttribute("name"), { email: email })
+		})
+		.then( () => setSubmit(true) )
+		.catch(err => console.log("err: ", err.message))
 	}
 
 	const getCurrentYear = () => {
@@ -45,11 +51,15 @@ function Footer() {
 				</label>
 				{ submitted 
 				? <p className="text-secondary text-center mx-auto">Thank you. We have added your email to the subscription list.</p> 
-				:	<Form name="subscribe" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)} className="mx-auto">
+				:	<Form name="subscribe" method="POST" data-netlify="true"  data-netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)} className="mx-auto">
+						<input type="hidden" name="form-name" value="subscribe" />
 						<InputGroup className="mb-4">
 							<Form.Control 
 								type="email"
+								name="email"
 								placeholder={t('footer.placeholder')}
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
 								aria-label="subscribe-list"
 								aria-describedby="subscribe"
 								style={{maxWidth: "25rem", minWidth: "16rem"}}
