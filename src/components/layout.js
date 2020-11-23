@@ -10,8 +10,6 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import PropTypes from 'prop-types'
 
-import Collapse from 'react-bootstrap/Collapse'
-import Alert from 'react-bootstrap/Alert'
 import Header from './header'
 import Footer from './footer'
 import SEO from './seo'
@@ -31,14 +29,6 @@ const Layout = ({children}) => {
   return (
     <>
       <SEO />
-      <Collapse in={show} unmountOnExit>
-        <Alert variant="dark" className="mb-0" onClose={() => setShow(false)} dismissible>
-          <Alert.Heading>Rental Service is temporary unavailable</Alert.Heading>
-          <p className="mb-0">
-            Due to Covid lockdown the Russian House is Closed for Visitors
-          </p>
-        </Alert>
-      </Collapse>
       <Header />
       <main>{children}</main>
       <Footer />
