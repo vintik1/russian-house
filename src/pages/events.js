@@ -26,10 +26,19 @@ const Events = () => {
 	const [auditory, setAuditory] = useState(t('auditory.any'))
 	const [day, setDay] = useState(undefined)
 
-	function formatDate(date, format) {
+	function formatDate(date) {
 		return  date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
-
 	}
+
+	const handleDayChange = (day) => {
+		const date = document.getElementById("day").value
+		if (day == undefined && date != undefined) 
+			setDay(date)
+		else if (day == undefined)
+			console.log("error. date is undefined.")
+		else
+			setDay(formatDate(day))
+  }
 
 	return (
 		<Container>
@@ -59,14 +68,14 @@ const Events = () => {
 				<Nav.Item className="mb-3">
 					<DayPickerInput 
 						value={day} 
-						format="YYYY"
+						inputProps={{id: "day"}}
 						formatDate={formatDate}
-						onDayChange={setDay} 
+						onDayChange={handleDayChange} 
 						placeholder={t('date')}
 						component={ props => 
 							<div>
 								<label htmlFor="day" className="m-0" style={{position: "relative", top: "-2px"}}><CalendarIcon /></label>
-								<input {...props} className="day-selector" name="day" id="day" />
+								<input {...props} className="day-selector" name="day" />
 							</div>
 						} 
 					/>

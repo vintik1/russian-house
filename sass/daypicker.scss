@@ -3,9 +3,9 @@
 	line-height: 1.2rem !important;
 }
 
-.DayPicker-Day--today {
-  color: #3937d3 !important;
-}
+// .DayPicker-Day--today {
+//   color: #e41150 !important;
+// }
 
 .day-selector {
 	text-align: start;
@@ -16,6 +16,11 @@
 
 .day-selector::placeholder {
 	color: #000;
+}
+
+.DayPicker-Day--highlighted {
+  background-color: orange;
+  color: white;
 }
 
 @import "daystyle";
