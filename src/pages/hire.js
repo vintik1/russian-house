@@ -70,21 +70,22 @@ const Hire = () => {
 		.then( () => setSubmit(true) )
 		.catch(err => console.log("err: ", err.message))
 	}
-
 	const HireForm = () => {
+		const star = <span style={{color: "red"}}>*</span>
+
 		return (
 			<Form name="hirecontact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={(e) => handleSubmit(e)}>
 				<input type="hidden" name="form-name" value="hirecontact" />
 				<Form.Group controlId="inputName">
-					<Form.Label>{t('form.name')}</Form.Label>
+					<Form.Label>{t('form.name')} {star}</Form.Label>
 					<Form.Control type="text" name="name" value={formData.name} onChange={changeHandler} required></Form.Control>
 				</Form.Group>
 				<Form.Group controlId="inputMail">
-					<Form.Label>{t('form.email')}</Form.Label>
+					<Form.Label>{t('form.email')} {star}</Form.Label>
 					<Form.Control type="email" name="email" value={formData.email} onChange={changeHandler} required></Form.Control>
 				</Form.Group>
 				<Form.Group controlId="inputPhone">
-					<Form.Label>{t('form.phone')}</Form.Label>
+					<Form.Label>{t('form.phone')} {star}</Form.Label>
 					<Form.Control type="text" name="phone" value={formData.phone} onChange={changeHandler} required></Form.Control>
 				</Form.Group>
 				<Form.Group controlId="inputRoom">
